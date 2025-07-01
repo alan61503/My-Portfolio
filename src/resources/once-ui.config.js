@@ -6,21 +6,21 @@ const baseURL = "https://demo.magic-portfolio.com";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/project": true,
+  "/contact": true,
+  "/resume": true,
 };
 
 const display = {
-  location: true,
-  time: true,
+  location: false,
+  time: false,
   themeSwitcher: true
 };
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/project/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 // Import and set font for each variant
@@ -183,7 +183,7 @@ const schema = {
 // social links
 const sameAs = {
   threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
+  linkedin: "https://www.linkedin.com/in/alan-chris-disilva/",
   discord: "https://discord.com/invite/5EyAQ4eNdS",
 };
 

@@ -1,16 +1,16 @@
 import { Logo } from "@once-ui-system/core";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Alan Chris ",
+  lastName: "Dsilva",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "alanchrisdisilva@gmail.com",
+  location: "India", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Malayalam","Hindi","tamil"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -18,8 +18,8 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      Just in case yall wanna be kept updated with my latest projects and thoughts.
+      <br />
     </>
   ),
 };
@@ -30,18 +30,14 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/alan61503",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/alan-chris-disilva/",
   },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-  },
+  
   {
     name: "Email",
     icon: "email",
@@ -55,16 +51,16 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Hi, I'm Alan — Full Stack Developer & AIML Specialist</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Once UI</strong></>,
+    title: <>Recent project: <strong className="ml-4">Next.js</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Selene, a design engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Alan, a software engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
+      <br />powerful digital products that merge intelligence with design. Let's create something impactful.
     </>
   ),
 };
@@ -90,9 +86,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a Computer Science Engineering (Hons) student specializing in Artificial Intelligence & Machine Learning at Christ University. With a strong foundation in frontend development and AI/ML, I am passionate about building intuitive user interfaces and leveraging machine learning to solve real-world problems.
+
+
       </>
     ),
   },
@@ -101,18 +97,18 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Matrix BMS Technologies",
+        timeframe: "2024 - Present",
+        role: "SDE",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            ystem Integration Test   
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            - Involved in UAT
           </>,
+          <>
+          - Developing Forms in our No/Low Code Application</>
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
@@ -197,28 +193,26 @@ const about = {
 };
 
 const blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  path: "/contact",
+  label: "Contact",
+  title: `Contact – ${person.name}`,
+  description: `Get in touch with ${person.name}`,
 };
 
 const work = {
-  path: "/work",
-  label: "Work",
+  path: "/project",
+  label: "Project",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  // All projects will be listed on the /home and /project routes
 };
 
 const gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+  path: "/resume",
+  label: "Resume",
+  title: `Resume – ${person.name}`,
+  description: `Professional resume of ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [

@@ -95,54 +95,55 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {routes[work.path as keyof typeof routes] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
+                    href={work.path}
                     label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    selected={pathname.startsWith(work.path)}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
+                    href={work.path}
+                    label={work.label}
+                    selected={pathname.startsWith(work.path)}
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              {routes[blog.path as keyof typeof routes] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="book"
-                    href="/blog"
+                    href={blog.path}
                     label={blog.label}
-                    selected={pathname.startsWith("/blog")}
+                    selected={pathname.startsWith(blog.path)}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
+                    href={blog.path}
+                    selected={pathname.startsWith(blog.path)}
                   />
                 </>
               )}
-              {routes["/gallery"] && (
+              {routes[gallery.path as keyof typeof routes] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="gallery"
-                    href="/gallery"
+                    href={gallery.path}
                     label={gallery.label}
-                    selected={pathname.startsWith("/gallery")}
+                    selected={pathname.startsWith(gallery.path)}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="gallery"
-                    href="/gallery"
-                    selected={pathname.startsWith("/gallery")}
+                    href={gallery.path}
+                    selected={pathname.startsWith(gallery.path)}
                   />
                 </>
               )}
