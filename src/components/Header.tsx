@@ -113,7 +113,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[blog.path as keyof typeof routes] && (
+              {routes[blog.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -130,7 +130,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[gallery.path as keyof typeof routes] && (
+              {routes[gallery.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"

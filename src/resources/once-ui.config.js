@@ -175,9 +175,9 @@ const mailchimp = {
 const schema = {
   logo: "",
   type: "Organization",
-  name: "Once UI",
+  name: "Christ University",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "alanchrisdisilva@gmail.com",
 };
 
 // social links

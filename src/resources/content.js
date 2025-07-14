@@ -10,7 +10,7 @@ const person = {
   avatar: "/images/avatar.jpg",
   email: "alanchrisdisilva@gmail.com",
   location: "India", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Malayalam","Hindi","tamil"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Malayalam","Hindi","tamil","arabic"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -54,12 +54,12 @@ const home = {
   headline: <>Hi, I'm Alan — Full Stack Developer & AIML Specialist</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Next.js</strong></>,
+    title: <>Recent project: <strong className="ml-4">Next.js portfolio</strong></>,
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      I'm Alan, a software engineer at <Logo icon="/trademarks/wordmark-dark.svg" style={{ display: "inline-flex", top: "0.25em", marginLeft: "-0.25em" }}/>, where I craft intuitive
+      I'm Alan, a software engineer at <b>Christ (Deemed to be University)</b>, where I craft intuitive
       <br />powerful digital products that merge intelligence with design. Let's create something impactful.
     </>
   ),
@@ -98,11 +98,11 @@ const about = {
     experiences: [
       {
         company: "Matrix BMS Technologies",
-        timeframe: "2024 - Present",
+        timeframe: "2024 April - June",
         role: "SDE",
         achievements: [
           <>
-            ystem Integration Test   
+            system Integration Test   
           </>,
           <>
             - Involved in UAT
@@ -121,17 +121,15 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Center of Excellence in E-Mobility",
+        timeframe: "2025 june - present",
+        role: "Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            built a fullstack website for a company that provides solutions for electric vehicle charging infrastructure.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            currently developing a fullstack application for a company and doing research
           </>,
         ],
         images: [],
@@ -143,38 +141,18 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Christ (Deemed to be University)",
+        description: <>Currently pursueing software engineering. <br />
+        3rd year Btech Computer Science and Engineering (Hons. AIML)</>,
       },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
+      
     ],
   },
   technical: {
     display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
-      {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
+      
       {
         title: "Next.js",
         description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
@@ -188,6 +166,8 @@ const about = {
           },
         ],
       },
+      
+    
     ],
   },
 };
