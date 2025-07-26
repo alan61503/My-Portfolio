@@ -254,27 +254,19 @@ export default function About() {
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
                     </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                    {/* University logo below description */}
-                    {institution.name === "Christ (Deemed to be University)" && (
-                      <img
-                        src="/images/logo.png"
-                        alt="Christ University Logo"
-                        style={{
-                          width: 260,
-                          height: "auto",
-                          marginTop: 32,
-                          borderRadius: 16,
-                          boxShadow: "0 4px 24px 0 rgba(0,0,0,0.10)",
-                          border: "2px solid #e0e0e0",
-                          background: "#fff",
-                          display: "block",
-                          objectFit: "contain"
-                        }}
-                      />
-                    )}
+                    <Flex fillWidth horizontal="space-between" vertical="center" gap="m">
+                      <Text variant="heading-default-xs" onBackground="neutral-weak" style={{ flex: 1 }}>
+                        {institution.description}
+                      </Text>
+                      {/* University logo to the right of description */}
+                      {institution.name === "Christ (Deemed to be University)" && (
+                        <img
+                          src="/images/logo.png"
+                          alt="Christ University Logo"
+                          style={{ width: 200, flexShrink: 0 }}
+                        />
+                      )}
+                    </Flex>
                   </Column>
                 ))}
               </Column>

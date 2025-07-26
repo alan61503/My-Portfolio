@@ -5,6 +5,7 @@ import { home, about, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -83,6 +84,9 @@ export default function Home() {
         </Flex>
       )}
       <Projects range={[2]} />
+      
+      <ContactSection />
+      
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
