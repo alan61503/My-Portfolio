@@ -44,11 +44,7 @@ export default function About() {
       display: about.studies.display,
       items: about.studies.institutions.map((institution) => institution.name),
     },
-    {
-      title: about.technical.title,
-      display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
-    },
+    // Removed technical skills section
   ];
   return (
     <Column maxWidth="m">
@@ -261,60 +257,31 @@ export default function About() {
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}
                     </Text>
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
-
-          {about.technical.display && (
-            <>
-              <Heading
-                as="h2"
-                id={about.technical.title}
-                variant="display-strong-s"
-                marginBottom="40"
-              >
-                {about.technical.title}
-              </Heading>
-              <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
-                    <Text variant="body-default-m" onBackground="neutral-weak">
-                      {skill.description}
-                    </Text>
-                    {skill.images && skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
+                    {/* University logo below description */}
+                    {institution.name === "Christ (Deemed to be University)" && (
+                      <img
+                        src="/images/logo.png"
+                        alt="Christ University Logo"
+                        style={{
+                          width: 260,
+                          height: "auto",
+                          marginTop: 32,
+                          borderRadius: 16,
+                          boxShadow: "0 4px 24px 0 rgba(0,0,0,0.10)",
+                          border: "2px solid #e0e0e0",
+                          background: "#fff",
+                          display: "block",
+                          objectFit: "contain"
+                        }}
+                      />
                     )}
                   </Column>
                 ))}
               </Column>
             </>
           )}
+
+          {/* Technical skills section removed */}
         </Column>
       </Flex>
     </Column>
