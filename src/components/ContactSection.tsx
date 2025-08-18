@@ -266,36 +266,7 @@ export const ContactSection = () => {
               </Flex>
             </Column>
 
-            {/* Social Media Icons */}
-            <Column gap="m" marginTop="l">
-              <Text variant="body-strong-s" marginBottom="s">
-                Follow Me
-              </Text>
-              <Flex gap="m">
-                {social.map((item) =>
-                  item.link && (
-                    <IconButton
-                      key={item.name}
-                      href={item.link}
-                      icon={item.icon}
-                      tooltip={item.name}
-                      size="l"
-                      variant="secondary"
-                      style={{
-                        borderRadius: "50%",
-                        transition: "transform 0.2s ease, background-color 0.2s ease"
-                      }}
-                      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
-                        e.currentTarget.style.transform = "scale(1.1)";
-                      }}
-                      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
-                        e.currentTarget.style.transform = "scale(1)";
-                      }}
-                    />
-                  )
-                )}
-              </Flex>
-            </Column>
+           
           </Column>
         </Flex>
       </Column>
