@@ -190,9 +190,7 @@ export const ContactSection = () => {
                 }} />
                 <Column gap="4">
                   <Text variant="body-strong-s">Alan Chris Dsilva</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak">
-                    Software Engineer
-                  </Text>
+                  
                 </Column>
               </Flex>
 
@@ -204,8 +202,10 @@ export const ContactSection = () => {
                   backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Text variant="body-default-s" onBackground="neutral-weak">
-                  Devadan Hall, Christ University, Bangalore
+                <Text variant="body-strong-s" style={{ textAlign: "left" }}>
+                  Devadan Hall,<br />
+                  Christ University,<br />
+                  Bangalore
                 </Text>
               </Flex>
 
@@ -247,7 +247,7 @@ export const ContactSection = () => {
                 }} />
                 <Text variant="body-default-s">
                   <a 
-                    href="mailto:alan@email.com"
+                    href="mailto:alanchrisdisilva@email.com"
                     style={{ 
                       color: "inherit", 
                       textDecoration: "none",
@@ -260,7 +260,7 @@ export const ContactSection = () => {
                       e.currentTarget.style.color = "inherit";
                     }}
                   >
-                    alan@email.com
+                    alanchrisdisilva@email.com
                   </a>
                 </Text>
               </Flex>
