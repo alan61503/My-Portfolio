@@ -9,7 +9,6 @@ import {
   Input, 
   Button, 
   IconButton,
-  Background,
   RevealFx
 } from "@once-ui-system/core";
 import { person, social } from "@/resources";
@@ -48,35 +47,22 @@ export const ContactSection = () => {
         border="neutral-alpha-weak"
         style={{
           position: "relative",
-          overflow: "hidden"
+          overflow: "hidden",
+          background: "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)",
+          border: "1px solid rgba(6, 182, 212, 0.1)"
         }}
       >
         {/* Background Effects */}
-        <Background
-          top="0"
-          position="absolute"
-          mask={{
-            x: 50,
-            y: 0,
-            radius: 100,
-            cursor: false
-          }}
-          gradient={{
-            display: true,
-            opacity: 30,
-            x: 50,
-            y: 0,
-            width: 100,
-            height: 100,
-            tilt: 0,
-            colorStart: "brand-background-strong",
-            colorEnd: "static-transparent",
-          }}
-          dots={{
-            display: true,
-            opacity: 20,
-            size: "2",
-            color: "brand-on-background-weak",
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)",
+            pointerEvents: "none",
+            zIndex: 0
           }}
         />
 
@@ -92,7 +78,7 @@ export const ContactSection = () => {
           <Text
             style={{
               position: "relative",
-              maxWidth: "var(--responsive-width-s)",
+              maxWidth: "600px",
               zIndex: 1,
               textAlign: "center"
             }}
@@ -142,22 +128,24 @@ export const ContactSection = () => {
                     width: "100%",
                     minHeight: 120,
                     padding: 12,
-                    borderRadius: "var(--static-radius-m)",
-                    border: "1px solid var(--neutral-alpha-medium)",
-                    backgroundColor: "var(--surface-background)",
-                    color: "var(--neutral-on-background)",
-                    fontSize: "var(--body-default-m-font-size)",
-                    lineHeight: "var(--body-default-m-line-height)",
-                    fontFamily: "var(--font-body)",
+                    borderRadius: "8px",
+                    border: "1px solid rgba(6, 182, 212, 0.2)",
+                    backgroundColor: "rgba(255, 255, 255, 0.05)",
+                    color: "#FFFFFF",
+                    fontSize: "16px",
+                    lineHeight: "1.5",
+                    fontFamily: "inherit",
                     resize: "vertical",
                     outline: "none",
-                    transition: "border-color 0.2s ease"
+                    transition: "all 0.2s ease"
                   }}
                   onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => {
-                    e.target.style.borderColor = "var(--brand-alpha-strong)";
+                    e.target.style.borderColor = "rgba(6, 182, 212, 0.6)";
+                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
                   }}
                   onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => {
-                    e.target.style.borderColor = "var(--neutral-alpha-medium)";
+                    e.target.style.borderColor = "rgba(6, 182, 212, 0.2)";
+                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
                   }}
                 />
                 <Button
@@ -185,12 +173,11 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "var(--brand-background-strong)",
+                  backgroundColor: "#06B6D4",
                   flexShrink: 0
                 }} />
-                <Column gap="4">
+                <Column gap={8}>
                   <Text variant="body-strong-s">Alan Chris Dsilva</Text>
-                  
                 </Column>
               </Flex>
 
@@ -199,7 +186,7 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "var(--brand-background-strong)",
+                  backgroundColor: "#06B6D4",
                   flexShrink: 0
                 }} />
                 <Text variant="body-strong-s" style={{ textAlign: "left" }}>
@@ -214,7 +201,7 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "var(--brand-background-strong)",
+                  backgroundColor: "#06B6D4",
                   flexShrink: 0
                 }} />
                 <Text variant="body-default-s">
@@ -226,7 +213,7 @@ export const ContactSection = () => {
                       transition: "color 0.2s ease"
                     }}
                     onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                      e.currentTarget.style.color = "var(--brand-on-background)";
+                      e.currentTarget.style.color = "#06B6D4";
                     }}
                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.currentTarget.style.color = "inherit";
@@ -242,7 +229,7 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "var(--brand-background-strong)",
+                  backgroundColor: "#06B6D4",
                   flexShrink: 0
                 }} />
                 <Text variant="body-default-s">
@@ -254,7 +241,7 @@ export const ContactSection = () => {
                       transition: "color 0.2s ease"
                     }}
                     onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                      e.currentTarget.style.color = "var(--brand-on-background)";
+                      e.currentTarget.style.color = "#06B6D4";
                     }}
                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.currentTarget.style.color = "inherit";
@@ -265,8 +252,6 @@ export const ContactSection = () => {
                 </Text>
               </Flex>
             </Column>
-
-           
           </Column>
         </Flex>
       </Column>
