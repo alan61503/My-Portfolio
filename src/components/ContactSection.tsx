@@ -9,6 +9,7 @@ import {
   Input, 
   Button, 
   IconButton,
+  Background,
   RevealFx
 } from "@once-ui-system/core";
 import { person, social } from "@/resources";
@@ -47,22 +48,35 @@ export const ContactSection = () => {
         border="neutral-alpha-weak"
         style={{
           position: "relative",
-          overflow: "hidden",
-          background: "linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)",
-          border: "1px solid rgba(6, 182, 212, 0.1)"
+          overflow: "hidden"
         }}
       >
         {/* Background Effects */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: "radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)",
-            pointerEvents: "none",
-            zIndex: 0
+        <Background
+          top="0"
+          position="absolute"
+          mask={{
+            x: 50,
+            y: 0,
+            radius: 100,
+            cursor: false
+          }}
+          gradient={{
+            display: true,
+            opacity: 30,
+            x: 50,
+            y: 0,
+            width: 100,
+            height: 100,
+            tilt: 0,
+            colorStart: "brand-background-strong",
+            colorEnd: "static-transparent",
+          }}
+          dots={{
+            display: true,
+            opacity: 20,
+            size: "2",
+            color: "brand-on-background-weak",
           }}
         />
 
@@ -78,7 +92,7 @@ export const ContactSection = () => {
           <Text
             style={{
               position: "relative",
-              maxWidth: "600px",
+              maxWidth: "var(--responsive-width-s)",
               zIndex: 1,
               textAlign: "center"
             }}
@@ -102,21 +116,23 @@ export const ContactSection = () => {
             <form onSubmit={handleSubmit}>
               <Column gap="m">
                 <Input
+                  id="contact-name"
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  size="l"
+                  size={2}
                 />
                 <Input
+                  id="contact-email"
                   name="email"
                   type="email"
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  size="l"
+                  size={2}
                 />
                 <textarea
                   name="message"
@@ -128,24 +144,22 @@ export const ContactSection = () => {
                     width: "100%",
                     minHeight: 120,
                     padding: 12,
-                    borderRadius: "8px",
-                    border: "1px solid rgba(6, 182, 212, 0.2)",
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    color: "#FFFFFF",
-                    fontSize: "16px",
-                    lineHeight: "1.5",
-                    fontFamily: "inherit",
+                    borderRadius: "var(--static-radius-m)",
+                    border: "1px solid var(--neutral-alpha-medium)",
+                    backgroundColor: "var(--surface-background)",
+                    color: "var(--neutral-on-background)",
+                    fontSize: "var(--body-default-m-font-size)",
+                    lineHeight: "var(--body-default-m-line-height)",
+                    fontFamily: "var(--font-body)",
                     resize: "vertical",
                     outline: "none",
-                    transition: "all 0.2s ease"
+                    transition: "border-color 0.2s ease"
                   }}
                   onFocus={(e: React.FocusEvent<HTMLTextAreaElement>) => {
-                    e.target.style.borderColor = "rgba(6, 182, 212, 0.6)";
-                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
+                    e.target.style.borderColor = "var(--brand-alpha-strong)";
                   }}
                   onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => {
-                    e.target.style.borderColor = "rgba(6, 182, 212, 0.2)";
-                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                    e.target.style.borderColor = "var(--neutral-alpha-medium)";
                   }}
                 />
                 <Button
@@ -173,11 +187,14 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "#06B6D4",
+                  backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Column gap={8}>
+                <Column gap="4">
                   <Text variant="body-strong-s">Alan Chris Dsilva</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak">
+                    Software Engineer
+                  </Text>
                 </Column>
               </Flex>
 
@@ -186,13 +203,11 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "#06B6D4",
+                  backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Text variant="body-strong-s" style={{ textAlign: "left" }}>
-                  Devadan Hall,<br />
-                  Christ University,<br />
-                  Bangalore
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  Devadan Hall, Christ University, Bangalore
                 </Text>
               </Flex>
 
@@ -201,7 +216,7 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "#06B6D4",
+                  backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
                 <Text variant="body-default-s">
@@ -213,7 +228,7 @@ export const ContactSection = () => {
                       transition: "color 0.2s ease"
                     }}
                     onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                      e.currentTarget.style.color = "#06B6D4";
+                      e.currentTarget.style.color = "var(--brand-on-background)";
                     }}
                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.currentTarget.style.color = "inherit";
@@ -229,27 +244,58 @@ export const ContactSection = () => {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  backgroundColor: "#06B6D4",
+                  backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
                 <Text variant="body-default-s">
                   <a 
-                    href="mailto:alanchrisdisilva@email.com"
+                    href="mailto:alan@email.com"
                     style={{ 
                       color: "inherit", 
                       textDecoration: "none",
                       transition: "color 0.2s ease"
                     }}
                     onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                      e.currentTarget.style.color = "#06B6D4";
+                      e.currentTarget.style.color = "var(--brand-on-background)";
                     }}
                     onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => {
                       e.currentTarget.style.color = "inherit";
                     }}
                   >
-                    alanchrisdisilva@email.com
+                    alan@email.com
                   </a>
                 </Text>
+              </Flex>
+            </Column>
+
+            {/* Social Media Icons */}
+            <Column gap="m" marginTop="l">
+              <Text variant="body-strong-s" marginBottom="s">
+                Follow Me
+              </Text>
+              <Flex gap="m">
+                {social.map((item) =>
+                  item.link && (
+                    <IconButton
+                      key={item.name}
+                      href={item.link}
+                      icon={item.icon}
+                      tooltip={item.name}
+                      size="l"
+                      variant="secondary"
+                      style={{
+                        borderRadius: "50%",
+                        transition: "transform 0.2s ease, background-color 0.2s ease"
+                      }}
+                      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        e.currentTarget.style.transform = "scale(1.1)";
+                      }}
+                      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                      }}
+                    />
+                  )
+                )}
               </Flex>
             </Column>
           </Column>
