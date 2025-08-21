@@ -105,12 +105,7 @@ export const ContactSection = () => {
         </Column>
 
         {/* Contact Form and Info */}
-        <Flex 
-          fillWidth 
-          gap="xl" 
-          mobileDirection="column"
-          style={{ position: "relative", zIndex: 1 }}
-        >
+        <Flex fillWidth gap="xl" mobileDirection="column" style={{ position: "relative", zIndex: 1 }}>
           {/* Contact Form */}
           <Column flex={2} gap="m">
             <form onSubmit={handleSubmit}>
@@ -174,14 +169,12 @@ export const ContactSection = () => {
               </Column>
             </form>
           </Column>
-
           {/* Contact Information */}
-          <Column flex={1} gap="l" align="start" horizontal="start" style={{ textAlign: "left", width: "100%" }}>
-            <Heading variant="heading-strong-m" marginBottom="m">
+          <Column flex={1} gap="l" align="center" horizontal="center" style={{ textAlign: "center", width: "100%", justifyContent: "center" }}>
+            <Heading variant="heading-strong-m" marginBottom="m" style={{ textAlign: "center", margin: "0 auto" }}>
               Get in Touch
             </Heading>
-            
-            <Column gap="m">
+            <Column gap="m" style={{ alignItems: "center" }}>
               <Flex gap="m" vertical="center">
                 <div style={{
                   width: 8,
@@ -262,42 +255,13 @@ export const ContactSection = () => {
                       e.currentTarget.style.color = "inherit";
                     }}
                   >
-                    alan@email.com
+                    alanchrisdisilva@email.com
                   </a>
                 </Text>
               </Flex>
             </Column>
 
-            {/* Social Media Icons */}
-            <Column gap="m" marginTop="xl">
-              <Text variant="body-strong-m" marginBottom="m">
-                Follow Me
-              </Text>
-              <Flex gap="m">
-                {social.map((item) =>
-                  item.link && (
-                    <IconButton
-                      key={item.name}
-                      href={item.link}
-                      icon={item.icon}
-                      tooltip={item.name}
-                      size="l"
-                      variant="secondary"
-                      style={{
-                        borderRadius: "50%",
-                        transition: "transform 0.2s ease, background-color 0.2s ease"
-                      }}
-                      onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
-                        e.currentTarget.style.transform = "scale(1.1)";
-                      }}
-                      onMouseLeave={(e: React.MouseEvent<HTMLButtonElement>) => {
-                        e.currentTarget.style.transform = "scale(1)";
-                      }}
-                    />
-                  )
-                )}
-              </Flex>
-            </Column>
+            {/* Social Media Icons removed as requested */}
           </Column>
         </Flex>
       </Column>
