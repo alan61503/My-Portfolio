@@ -176,7 +176,7 @@ export const ContactSection = () => {
           </Column>
 
           {/* Contact Information */}
-          <Column flex={1} gap="l">
+          <Column flex={1} gap="l" align="start" horizontal="start" style={{ textAlign: "left", width: "100%" }}>
             <Heading variant="heading-strong-m" marginBottom="m">
               Get in Touch
             </Heading>
@@ -191,8 +191,8 @@ export const ContactSection = () => {
                   flexShrink: 0
                 }} />
                 <Column gap="4">
-                  <Text variant="body-strong-s">Alan Chris Dsilva</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak">
+                  <Text variant="body-strong-m">Alan Chris Dsilva</Text>
+                  <Text variant="body-default-m" onBackground="neutral-weak">
                     Software Engineer
                   </Text>
                 </Column>
@@ -206,7 +206,7 @@ export const ContactSection = () => {
                   backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Text variant="body-default-s" onBackground="neutral-weak">
+                <Text variant="body-default-m" onBackground="neutral-weak">
                   Devadan Hall, Christ University, Bangalore
                 </Text>
               </Flex>
@@ -219,7 +219,7 @@ export const ContactSection = () => {
                   backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Text variant="body-default-s">
+                <Text variant="body-default-m">
                   <a 
                     href="tel:+917558864498"
                     style={{ 
@@ -247,7 +247,7 @@ export const ContactSection = () => {
                   backgroundColor: "var(--brand-background-strong)",
                   flexShrink: 0
                 }} />
-                <Text variant="body-default-s">
+                <Text variant="body-default-m">
                   <a 
                     href="mailto:alan@email.com"
                     style={{ 
@@ -269,8 +269,8 @@ export const ContactSection = () => {
             </Column>
 
             {/* Social Media Icons */}
-            <Column gap="m" marginTop="l">
-              <Text variant="body-strong-s" marginBottom="s">
+            <Column gap="m" marginTop="xl">
+              <Text variant="body-strong-m" marginBottom="m">
                 Follow Me
               </Text>
               <Flex gap="m">
