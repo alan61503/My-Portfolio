@@ -259,14 +259,15 @@ export default function Home() {
           <Heading variant="display-strong-m" align="center">
             Let's work together
           </Heading>
-          <Text
-            variant="body-default-l"
-            onBackground="brand-medium"
-            align="center"
-            maxWidth="s"
-          >
-            Have a project in mind? Let's discuss how we can create something amazing together.
-          </Text>
+          <Column maxWidth="s">
+            <Text
+              variant="body-default-l"
+              onBackground="brand-medium"
+              align="center"
+            >
+              Have a project in mind? Let's discuss how we can create something amazing together.
+            </Text>
+          </Column>
           <Flex gap="m" wrap>
             <Button
               href="/contact"
