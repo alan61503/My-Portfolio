@@ -19,7 +19,8 @@ export const Footer = () => {
         paddingY="8"
         paddingX="16"
         gap="16"
-        horizontal="space-between"
+        fillWidth
+        horizontal="end"
         vertical="center"
       >
         <Text variant="body-default-s" onBackground="neutral-strong">
