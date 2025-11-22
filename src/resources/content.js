@@ -97,6 +97,31 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Apex Motion",
+        timeframe: "2024 - Present",
+        role: "Web Technology Lead",
+        achievements: [
+          <>
+            Architected, designed, and built the entire apexmotion.in platform, owning both the front-end experience and supporting infrastructure.
+          </>,
+          <>
+            Lead the ongoing roadmap for performance, accessibility, and deployment automation so new initiatives ship in hours instead of days.
+          </>,
+          <>
+            Partner with design, marketing, and leadership to convert business briefs into data-backed product releases.
+          </>,
+        ],
+        images: [
+          {
+            src: "/images/apex.png",
+            alt: "Apex Motion logo",
+            width: 16,
+            height: 9,
+            kind: "logo",
+          },
+        ],
+      },
+      {
         company: "Matrix BMS Technologies",
         timeframe: "2024 April - June",
         role: "SDE",

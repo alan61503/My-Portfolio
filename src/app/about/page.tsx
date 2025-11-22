@@ -213,28 +213,47 @@ export default function About() {
                     </Column>
                     {experience.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
+                        {experience.images.map((image, index) => {
+                          const isLogo = "kind" in image && image.kind === "logo";
+                          if (isLogo) {
+                            return (
+                              <Flex key={index} padding="8" background="transparent">
+                                <img
+                                  src={image.src}
+                                  alt={image.alt || "Company logo"}
+                                  style={{
+                                    maxWidth: 220,
+                                    height: "auto",
+                                    objectFit: "contain",
+                                  }}
+                                />
+                              </Flex>
+                            );
+                          }
+
+                          return (
+                            <Flex
+                              key={index}
+                              border="neutral-medium"
                               radius="m"
                               //@ts-ignore
-                              sizes={image.width.toString()}
+                              minWidth={image.width}
                               //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
+                              height={image.height}
+                            >
+                              <Media
+                                enlarge
+                                radius="m"
+                                //@ts-ignore
+                                sizes={image.width.toString()}
+                                //@ts-ignore
+                                alt={image.alt}
+                                //@ts-ignore
+                                src={image.src}
+                              />
+                            </Flex>
+                          );
+                        })}
                       </Flex>
                     )}
                   </Column>
