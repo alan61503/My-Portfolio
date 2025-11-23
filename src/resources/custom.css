@@ -2,6 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: transparent;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Theme variables for site-wide consistency */
+:root {
+  --bg-dark: #1e1e3f;
+  --panel-dark: rgba(4,7,20,0.92);
+  --panel-contrast: rgba(3,5,18,0.95);
+  --accent-1: #8b5cf6; /* purple */
+  --accent-2: #6366f1; /* indigo */
+  --accent-glow: rgba(139,92,246,0.18);
+  --grid-color: rgba(255,255,255,0.04);
+}
+
+/* Contact page layout & components */
+.contact-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4.5rem 1.5rem;
+  background: transparent;
+}
+
+.contact-overlay-radial {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, var(--accent-glow), transparent 55%),
+              radial-gradient(circle at 85% 10%, rgba(56,189,248,0.08), transparent 45%);
+  pointer-events: none;
+}
+
+.contact-overlay-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contact-columns {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.contact-left {
+  grid-column: 1 / span 5;
+}
+
+.contact-right {
+  grid-column: 6 / span 7;
+}
+
+@media (max-width: 900px) {
+  .contact-columns {
+    grid-template-columns: 1fr;
+  }
+  .contact-left, .contact-right {
+    grid-column: auto;
+  }
+}
+
+.contact-panel {
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  backdrop-filter: blur(14px);
+}
+
+.contact-panel--info {
+  background: var(--panel-dark);
+  border: 1px solid rgba(59,130,246,0.12);
+}
+
+.contact-panel--form {
+  background: var(--panel-contrast);
+  border: 1px solid rgba(59,130,246,0.12);
+}
+
+.contact-actions > * {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-btn-primary {
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+  border: none;
+}
+
+.contact-input, textarea.contact-textarea {
+  background: rgba(30,30,63,0.9);
+  border: 1px solid rgba(59,130,246,0.12);
+  color: #fff;
+}
+
+.contact-input:focus, textarea.contact-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.08);
+  border-color: rgba(139,92,246,0.45);
+}
+
+.contact-note {
+  color: rgba(255,255,255,0.75);
+}
+
 /* :root {
   /*
   /* Example setup for custom colors */

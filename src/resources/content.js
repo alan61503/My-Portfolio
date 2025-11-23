@@ -86,7 +86,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am a Computer Science Engineering (Hons) student specializing in Artificial Intelligence & Machine Learning at Christ University. With a strong foundation in frontend development and AI/ML, I am passionate about building intuitive user interfaces and leveraging machine learning to solve real-world problems.
+        I am a Computer Science Engineering (Hons) student specializing in Artificial Intelligence & Machine Learning at Christ University. With a strong foundation in full-stack development and AI/ML, I am passionate about building intuitive user interfaces and leveraging machine learning to solve real-world problems.
 
 
       </>
@@ -98,7 +98,7 @@ const about = {
     experiences: [
       {
         company: "Apex Motion",
-        timeframe: "2024 - Present",
+        timeframe: "2025 April - Present",
         role: "Web Technology Lead",
         achievements: [
           <>

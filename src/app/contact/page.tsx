@@ -54,49 +54,11 @@ export default function Contact() {
   };
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        background: "linear-gradient(135deg, #03060f 0%, #050815 35%, #070b1d 100%)",
-        minHeight: "100vh",
-        padding: "5rem 0 4rem",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.22), transparent 50%), radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.18), transparent 45%)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          opacity: 0.25,
-          pointerEvents: "none",
-        }}
-      />
+    <div className="page-wrapper contact-wrapper">
+      <div className="contact-overlay-radial" />
+      <div className="contact-overlay-grid" />
 
-      <Column
-        fillWidth
-        gap="xl"
-        style={{
-          position: "relative",
-          zIndex: 1,
-          width: "100%",
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "0 1.5rem",
-        }}
-      >
+      <Column fillWidth gap="xl" className="contact-inner">
         <RevealFx translateY="8" delay={0.1}>
           <Column gap="s" align="center" horizontal="center" style={{ textAlign: "center" }}>
             <Text variant="label-default-s" onBackground="accent-medium" style={{ letterSpacing: "0.18em" }}>
@@ -137,27 +99,8 @@ export default function Contact() {
             >
               <Column gap="m">
                 {contactDetails.map((detail) => (
-                  <Flex
-                    key={detail.label}
-                    gap="m"
-                    vertical="center"
-                    padding="m"
-                    radius="m"
-                    style={{
-                      border: "1px solid rgba(59, 130, 246, 0.25)",
-                      background: "rgba(8, 12, 32, 0.8)",
-                    }}
-                  >
-                    <Flex
-                      horizontal="center"
-                      vertical="center"
-                      radius="m"
-                      style={{
-                        width: 40,
-                        height: 40,
-                        background: "rgba(37, 99, 235, 0.25)",
-                      }}
-                    >
+                  <Flex key={detail.label} gap="m" vertical="center" className="contact-panel contact-panel--info">
+                    <Flex horizontal="center" vertical="center" radius="m" style={{ width: 40, height: 40, background: 'rgba(37,99,235,0.18)' }}>
                       <Icon name={detail.icon} size="s" onBackground="brand-strong" />
                     </Flex>
                     <Column gap="4">
@@ -165,14 +108,9 @@ export default function Contact() {
                         {detail.label}
                       </Text>
                       {detail.href ? (
-                        <Button
-                          href={detail.href}
-                          variant="tertiary"
-                          size="s"
-                          prefixIcon={detail.icon}
-                        >
+                        <a href={detail.href} className="contact-note" rel="noreferrer">
                           {detail.value}
-                        </Button>
+                        </a>
                       ) : (
                         <Text variant="body-default-m">{detail.value}</Text>
                       )}
@@ -181,19 +119,13 @@ export default function Contact() {
                 ))}
               </Column>
 
-              <Flex gap="m" wrap>
+              <div className="contact-actions" style={{ marginTop: 12 }}>
                 {actions.map((action) => (
-                  <Button
-                    key={action.label}
-                    href={action.href}
-                    variant="secondary"
-                    size="m"
-                    prefixIcon={action.icon}
-                  >
+                  <Button key={action.label} href={action.href} size="m" variant="secondary" prefixIcon={action.icon}>
                     {action.label}
                   </Button>
                 ))}
-              </Flex>
+              </div>
             </Column>
 
             <Column
@@ -230,13 +162,14 @@ export default function Contact() {
                     <Flex gap="m" wrap>
                       <Column gap="8" style={{ flex: "1 1 200px", minWidth: 200 }}>
                         <Input
-                          id="firstName"
-                          label="First name"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleInputChange}
-                          required
-                        />
+                            id="firstName"
+                            label="First name"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            required
+                            className="contact-input"
+                          />
                       </Column>
                       <Column gap="8" style={{ flex: "1 1 200px", minWidth: 200 }}>
                         <Input
@@ -246,6 +179,7 @@ export default function Contact() {
                           value={formData.lastName}
                           onChange={handleInputChange}
                           required
+                          className="contact-input"
                         />
                       </Column>
                     </Flex>
@@ -258,6 +192,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      className="contact-input"
                     />
 
                     <Input
@@ -268,6 +203,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder="Optional"
+                      className="contact-input"
                     />
 
                     <Column gap="8">
@@ -280,28 +216,8 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         rows={6}
-                        style={{
-                          width: "100%",
-                          padding: "var(--spacing-m)",
-                          borderRadius: "var(--static-radius-m)",
-                          border: "1px solid rgba(59, 130, 246, 0.4)",
-                          backgroundColor: "rgba(2, 4, 14, 0.9)",
-                          color: "var(--neutral-on-background-strong)",
-                          fontSize: "var(--body-default-m-font-size)",
-                          fontFamily: "var(--font-body)",
-                          resize: "vertical",
-                          outline: "none",
-                          transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-                        }}
+                        className="contact-textarea"
                         placeholder="Share context, goals, or timelines so we can dive straight in."
-                        onFocus={(event) => {
-                          event.currentTarget.style.borderColor = "rgba(14, 165, 233, 0.7)";
-                          event.currentTarget.style.boxShadow = "0 0 0 3px rgba(59, 130, 246, 0.25)";
-                        }}
-                        onBlur={(event) => {
-                          event.currentTarget.style.borderColor = "rgba(59, 130, 246, 0.4)";
-                          event.currentTarget.style.boxShadow = "none";
-                        }}
                       />
                     </Column>
 
