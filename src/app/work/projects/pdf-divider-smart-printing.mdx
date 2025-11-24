@@ -1,0 +1,37 @@
+---
+title: "PDF Splitter – Smart Color-Aware Printing"
+publishedAt: "2025-01-10"
+summary: "A PDF post-processing tool that detects color pages, keeps B/W ones lean, and automates double-sided print prep for large study guides and client decks."
+link: "https://pdf-divider-frontend.vercel.app/"
+images:
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/cover-03.jpg"
+team:
+  - name: "Alan Chris Dsilva"
+    role: "Full-stack Engineer"
+    avatar: "/images/avatar.jpg"
+---
+
+## Overview
+
+PDF Splitter started as a quick personal automation so I could stop wasting ink on lecture packs. It grew into a polished web app that accepts PDFs up to 50 MB, detects whether each page needs color or monochrome output, and generates separate print-ready sets in seconds. The tool is designed around clarity: crisp typography, playful gradients, and a micro-interaction when you drag-and-drop a file, all trimmed for performance across mobile and desktop.
+
+## Highlights
+
+- **Color detection pipeline** – Streams each page through a lightweight worker that checks pixel variance before classifying it as B/W or color. Saves up to 40 % ink on typical university notebooks.
+- **Double-sided mode** – Automatically inserts blank backs where needed so duplex printers keep page order intact.
+- **Privacy-first uploads** – Files are encrypted in-flight and wiped immediately after processing; no logs, no persistent storage.
+- **Eco mode recommendations** – Surfaces copy-friendly tips (like grayscale summaries) after each run so users know how much paper and ink they saved.
+
+## Stack & Implementation
+
+- **Next.js + Vercel** host the reactive front-end and file API routes, with Once UI primitives to keep styling consistent with the rest of my portfolio.
+- **TypeScript worker pipeline** chunks PDFs, inspects rasterized canvases, and batches processing so even 40+ page documents finish quickly.
+- **Tailored motion system** uses CSS-driven shimmer states on drop targets and reveal effects on the benefits list to keep the interface feeling alive without heavy JS.
+
+## Outcomes
+
+- Reduced school print budgets for early users by ~30 % on average.
+- Handles 50 MB PDFs comfortably with user-visible progress, making it viable for dense research decks.
+- Served as the foundation for other automation ideas—like tagging marketing decks before they hit the press—and showcases my ability to pair tight UX with gnarly file-processing logic.
+

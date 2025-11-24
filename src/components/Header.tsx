@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
+import { Flex, Line, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work, gallery } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -47,8 +47,6 @@ export const Header = () => {
 
   return (
     <>
-      <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
         position="unset"
@@ -113,7 +111,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[blog.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
+              {routes[blog.path as "/resume" | "/project" | "/about" | "/"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
@@ -130,7 +128,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[gallery.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
+              {routes[gallery.path as "/resume" | "/project" | "/about" | "/"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"

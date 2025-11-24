@@ -54,8 +54,8 @@ const home = {
   headline: <>Hi, I'm Alan — Full Stack Developer & AIML Specialist</>,
   featured: {
     display: true,
-    title: <>Recent project: <strong className="ml-4">Next.js portfolio</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    title: <>Recent project: <strong className="ml-4">PDF Splitter</strong></>,
+    href: "/work/pdf-divider-smart-printing",
   },
   subline: (
     <>
@@ -198,10 +198,10 @@ const about = {
 };
 
 const blog = {
-  path: "/contact",
-  label: "Contact",
-  title: `Contact – ${person.name}`,
-  description: `Get in touch with ${person.name}`,
+  path: "/blog",
+  label: "Blog",
+  title: `Blog – ${person.name}`,
+  description: `Thoughts and insights by ${person.name}`,
 };
 
 const work = {

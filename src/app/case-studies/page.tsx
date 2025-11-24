@@ -203,9 +203,6 @@ export default function CaseStudies() {
           <Text variant="body-default-l" onBackground="neutral-medium" align="center">
             Let's discuss your project and create something amazing together.
           </Text>
-          <Button variant="primary" size="m" href="/contact">
-            Start a conversation
-          </Button>
         </Column>
       </RevealFx>
     </Column>

@@ -217,9 +217,6 @@ export default function Services() {
             Let's discuss how I can help you achieve your goals.
           </Text>
           <Flex gap="8" wrap horizontal="center">
-            <Button variant="primary" size="m" href="/contact">
-              Get in touch
-            </Button>
             <Button variant="secondary" size="m" href="/work">
               View my work
             </Button>

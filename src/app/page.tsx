@@ -16,6 +16,12 @@ export default function Home() {
 
   const featuredProjects = [
     {
+      title: "PDF Splitter – Smart color-aware printing",
+      description: "Upload once, auto-detect color vs B/W pages, and prep duplex-safe print sets with privacy-first handling.",
+      href: "/work/pdf-divider-smart-printing",
+      tags: ["Next.js", "Automation", "PDF tooling"],
+    },
+    {
       title: "Once UI Design System",
       description: "A customizable design system built with React and TypeScript",
       href: "/work/building-once-ui-a-customizable-design-system",
@@ -94,16 +100,6 @@ export default function Home() {
                   )}
                   {about.title}
                 </Flex>
-              </Button>
-              <Button
-                id="contact"
-                data-border="rounded"
-                href="/contact"
-                variant="primary"
-                size="m"
-                weight="default"
-              >
-                Get in touch
               </Button>
             </Flex>
           </RevealFx>
@@ -269,14 +265,6 @@ export default function Home() {
             </Text>
           </Column>
           <Flex gap="m" wrap>
-            <Button
-              href="/contact"
-              variant="primary"
-              size="l"
-              arrowIcon
-            >
-              Get in touch
-            </Button>
             <Button
               href={`mailto:${person.email}`}
               variant="secondary"

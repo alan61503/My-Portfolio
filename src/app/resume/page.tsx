@@ -360,13 +360,6 @@ export default function Resume() {
           </Text>
           <Flex gap="8" wrap horizontal="center">
             <Button
-              variant="primary"
-              size="m"
-              href="/contact"
-            >
-              Contact me
-            </Button>
-            <Button
               variant="secondary"
               size="m"
               href="https://github.com/alan61503"
