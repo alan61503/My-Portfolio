@@ -213,11 +213,39 @@ const work = {
   // All projects will be listed on the /home and /project routes
 };
 
+const services = {
+  path: "/services",
+  label: "Services",
+  title: `Services – ${person.name}`,
+  description: `Services and expertise offered by ${person.name}`,
+};
+
+const caseStudies = {
+  path: "/case-studies",
+  label: "Case Studies",
+  title: `Case Studies – ${person.name}`,
+  description: `Real projects and results by ${person.name}`,
+};
+
+const tools = {
+  path: "/tools",
+  label: "Tools",
+  title: `Tools & Setup – ${person.name}`,
+  description: `Development tools and setup used by ${person.name}`,
+};
+
+const achievements = {
+  path: "/achievements",
+  label: "Achievements",
+  title: `Achievements – ${person.name}`,
+  description: `Certifications, awards, and milestones of ${person.name}`,
+};
+
 const gallery = {
-  path: "/resume",
-  label: "Resume",
-  title: `Resume – ${person.name}`,
-  description: `Professional resume of ${person.name}`,
+  path: "/gallery",
+  label: "Gallery",
+  title: `Gallery – ${person.name}`,
+  description: `Photo gallery by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
@@ -264,4 +292,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, services, caseStudies, tools, achievements, gallery };
