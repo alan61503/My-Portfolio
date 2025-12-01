@@ -198,10 +198,10 @@ const about = {
 };
 
 const blog = {
-  path: "/blog",
-  label: "Blog",
-  title: `Blog – ${person.name}`,
-  description: `Thoughts and insights by ${person.name}`,
+  path: "/contact",
+  label: "Contact",
+  title: `Contact – ${person.name}`,
+  description: `Get in touch with ${person.name}`,
 };
 
 const work = {

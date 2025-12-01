@@ -73,7 +73,21 @@ export default async function Project({
         <Button data-border="rounded" href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
-        <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+        <Flex gap="12" vertical="center">
+          <Heading variant="display-strong-s">{post.metadata.title}</Heading>
+          {post.metadata.link && (
+            <Button
+              href={post.metadata.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              size="s"
+              prefixIcon="globe"
+            >
+              Live Demo
+            </Button>
+          )}
+        </Flex>
       </Column>
       {post.metadata.images.length > 0 && (
         <Media

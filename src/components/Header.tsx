@@ -111,18 +111,18 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[blog.path as "/resume" | "/project" | "/about" | "/"] && (
+              {routes[blog.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="book"
+                    prefixIcon="email"
                     href={blog.path}
                     label={blog.label}
                     selected={pathname.startsWith(blog.path)}
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="book"
+                    prefixIcon="email"
                     href={blog.path}
                     selected={pathname.startsWith(blog.path)}
                   />

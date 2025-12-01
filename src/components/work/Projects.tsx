@@ -63,6 +63,7 @@ export function Projects({ range }: ProjectsProps) {
             content={post.content}
             avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
             link={post.metadata.link || ""}
+            year={post.metadata.publishedAt ? new Date(post.metadata.publishedAt).getFullYear().toString() : undefined}
           />
         </RevealFx>
       ))}

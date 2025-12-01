@@ -22,6 +22,7 @@ interface ProjectCardProps {
   description: string;
   avatars: { src: string }[];
   link: string;
+  year?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -161,9 +162,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               <Badge background="brand-alpha-weak" paddingX="8" paddingY="4" textVariant="label-default-s">
                 Featured
               </Badge>
-              <Badge background="neutral-alpha-weak" paddingX="8" paddingY="4" textVariant="label-default-s">
-                2024
-              </Badge>
+              {year && (
+                <Badge background="neutral-alpha-weak" paddingX="8" paddingY="4" textVariant="label-default-s">
+                  {year}
+                </Badge>
+              )}
             </Flex>
           </Column>
         )}
