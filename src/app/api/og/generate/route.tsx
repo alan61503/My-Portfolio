@@ -8,18 +8,27 @@ export async function GET(request: Request) {
   let title = url.searchParams.get("title") || "Portfolio";
 
   async function loadGoogleFont(font: string) {
-    const url = `https://fonts.googleapis.com/css2?family=${font}`
-    const css = await (await fetch(url)).text()
-    const resource = css.match(/src: url\((.+)\) format\('(opentype|truetype)'\)/)
+    try {
+      const url = `https://fonts.googleapis.com/css2?family=${font}`;
+      const res = await fetch(url);
+      const css = await res.text();
 
-    if (resource) {
-      const response = await fetch(resource[1])
-      if (response.status == 200) {
-        return await response.arrayBuffer()
+      // Try to find a woff2 font first (Google Fonts default), otherwise fallback to any url()
+      const woff2Match = css.match(/src:\s*url\(([^)]+)\)\s*format\('woff2'\)/);
+      const anyUrlMatch = css.match(/url\(([^)]+)\)/);
+      const fontUrl = (woff2Match?.[1] ?? anyUrlMatch?.[1])?.trim();
+
+      if (fontUrl) {
+        const fontRes = await fetch(fontUrl);
+        if (fontRes.ok) {
+          return await fontRes.arrayBuffer();
+        }
       }
+    } catch (_err) {
+      // Swallow and fallback to system fonts; we don't want OG generation to fail hard.
     }
 
-    throw new Error('failed to load font data')
+    return undefined;
   }
 
   return new ImageResponse(
@@ -106,13 +115,19 @@ export async function GET(request: Request) {
     {
       width: 1280,
       height: 720,
-      fonts: [
-        {
-          name: "Geist",
-          data: await loadGoogleFont('Geist:wght@400'),
-          style: "normal",
-        },
-      ],
+      // Include fonts only if we managed to load them; otherwise rely on defaults.
+      fonts: (await (async () => {
+        const geist = await loadGoogleFont("Geist:wght@400");
+        return geist
+          ? [
+              {
+                name: "Geist",
+                data: geist,
+                style: "normal",
+              },
+            ]
+          : [];
+      })()),
     },
   );
 }
