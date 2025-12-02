@@ -58,12 +58,26 @@ export default function Home() {
       />
       
       {/* Hero Section */}
-      <Column fillWidth paddingY="24" gap="m">
+      <Column fillWidth paddingTop="40" paddingBottom="24" gap="m">
         <Column maxWidth="s">
           {home.featured.display && (
           <RevealFx fillWidth horizontal="start" paddingTop="16" paddingBottom="32" paddingLeft="12">
-            <Badge background="brand-alpha-weak" paddingX="12" paddingY="4" onBackground="neutral-strong" textVariant="label-default-s" arrow={false}
-              href={home.featured.href}>
+            <Badge 
+              background="brand-alpha-weak" 
+              onBackground="brand-strong" 
+              textVariant="label-default-l"
+              arrow={false}
+              href={home.featured.href}
+              style={{
+                paddingLeft: "clamp(20px, 3vw, 32px)",
+                paddingRight: "clamp(20px, 3vw, 32px)",
+                paddingTop: "clamp(10px, 2vw, 14px)",
+                paddingBottom: "clamp(10px, 2vw, 14px)",
+                fontSize: "clamp(14px, 2vw, 16px)",
+                fontWeight: 600,
+                letterSpacing: "0.5px"
+              }}
+            >
               <Row paddingY="2">{home.featured.title}</Row>
             </Badge>
           </RevealFx>

@@ -53,7 +53,7 @@ const home = {
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Hi, I'm Alan — Full Stack Developer & AIML Specialist</>,
   featured: {
-    display: true,
+    display: false,
     title: <>Recent project: <strong className="ml-4">PDF Splitter</strong></>,
     href: "/work/pdf-divider-smart-printing",
   },

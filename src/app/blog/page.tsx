@@ -47,11 +47,12 @@ export default function Blog() {
             background="brand-alpha-weak" 
             onBackground="brand-strong" 
             textVariant="label-default-l"
-            paddingX="32"
             style={{
-              paddingTop: "14px",
-              paddingBottom: "14px",
-              fontSize: "16px",
+              paddingLeft: "clamp(20px, 3vw, 32px)",
+              paddingRight: "clamp(20px, 3vw, 32px)",
+              paddingTop: "clamp(10px, 2vw, 14px)",
+              paddingBottom: "clamp(10px, 2vw, 14px)",
+              fontSize: "clamp(14px, 2vw, 16px)",
               fontWeight: 600,
               letterSpacing: "0.5px"
             }}
