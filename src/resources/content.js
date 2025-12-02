@@ -198,6 +198,13 @@ const about = {
 };
 
 const blog = {
+  path: "/blog",
+  label: "Blog",
+  title: `Blog – ${person.name}`,
+  description: `Thoughts and insights by ${person.name}`,
+};
+
+const contact = {
   path: "/contact",
   label: "Contact",
   title: `Contact – ${person.name}`,
@@ -292,4 +299,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, services, caseStudies, tools, achievements, gallery };
+export { person, social, newsletter, home, about, blog, contact, work, services, caseStudies, tools, achievements, gallery };

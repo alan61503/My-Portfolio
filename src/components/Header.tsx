@@ -111,20 +111,38 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes[blog.path as "/contact" | "/resume" | "/project" | "/about" | "/"] && (
+              {routes[blog.path as keyof typeof routes] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="email"
+                    prefixIcon="book"
                     href={blog.path}
                     label={blog.label}
                     selected={pathname.startsWith(blog.path)}
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="email"
+                    prefixIcon="book"
                     href={blog.path}
                     selected={pathname.startsWith(blog.path)}
+                  />
+                </>
+              )}
+
+              {routes["/contact"] && (
+                <>
+                  <ToggleButton
+                    className="s-flex-hide"
+                    prefixIcon="email"
+                    href="/contact"
+                    label={/* use contact label from resources if available */("Contact")}
+                    selected={pathname.startsWith("/contact")}
+                  />
+                  <ToggleButton
+                    className="s-flex-show"
+                    prefixIcon="email"
+                    href="/contact"
+                    selected={pathname.startsWith("/contact")}
                   />
                 </>
               )}
