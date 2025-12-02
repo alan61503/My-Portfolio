@@ -1,15 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { Badge, Button, Column, Flex, Heading, Icon, Input, RevealFx, Text } from "@once-ui-system/core";
+import { Badge, Button, Column, Flex, Heading, Icon, IconButton, Input, RevealFx, Text } from "@once-ui-system/core";
 
-import { about, person } from "@/resources";
+import { about, person, social } from "@/resources";
 
 const contactHighlights = [
   { icon: "email" as const, label: "Email", value: person.email, href: `mailto:${person.email}` },
   { icon: "calendar" as const, label: "15‑min call", value: "Book on Cal.com", href: about.calendar?.link ?? "https://cal.com" },
   { icon: "home" as const, label: "Based in", value: person.location ?? "India" },
 ];
+
+// Get GitHub and LinkedIn from social array
+const githubLink = social.find((s) => s.name === "GitHub")?.link;
+const linkedinLink = social.find((s) => s.name === "LinkedIn")?.link;
 
 const initialFormState = {
   name: "",
@@ -65,45 +69,158 @@ export default function ContactPage() {
         >
           <Column
             flex={1}
-            gap="m"
-            padding="xl"
+            gap="24"
+            padding="32"
             radius="l"
             border="neutral-alpha-weak"
             background="surface"
             style={{ minWidth: 280 }}
           >
-            <Heading variant="heading-strong-m">Ways to reach me</Heading>
-            <Column gap="m">
+            <Heading variant="heading-strong-l" style={{ fontSize: "20px", fontWeight: 600, letterSpacing: "-0.01em", marginBottom: "4px" }}>
+              Ways to reach me
+            </Heading>
+            <Column gap="20">
               {contactHighlights.map((item) => (
-                <Flex key={item.label} gap="m" vertical="center">
+                <Flex key={item.label} gap="16" vertical="center">
                   <Flex
                     horizontal="center"
                     vertical="center"
                     radius="l"
-                    style={{ width: 44, height: 44, background: "var(--brand-alpha-weak)" }}
+                    style={{ 
+                      width: 48, 
+                      height: 48, 
+                      background: "var(--brand-alpha-weak)",
+                      flexShrink: 0
+                    }}
                   >
-                    <Icon name={item.icon} size="s" onBackground="brand-strong" />
+                    <Icon name={item.icon} size="m" onBackground="brand-strong" />
                   </Flex>
-                  <Column gap="2">
-                    <Text variant="label-default-s" onBackground="neutral-medium">
+                  <Column gap="4" style={{ flex: 1, minWidth: 0 }}>
+                    <Text 
+                      variant="label-default-s" 
+                      onBackground="neutral-medium"
+                      style={{ 
+                        fontSize: "12px", 
+                        fontWeight: 500, 
+                        textTransform: "uppercase",
+                        letterSpacing: "0.5px",
+                        opacity: 0.7
+                      }}
+                    >
                       {item.label}
                     </Text>
                     {item.href ? (
-                      <a href={item.href} style={{ color: "inherit", textDecoration: "none" }}>
-                        <Text variant="body-default-m">{item.value}</Text>
+                      <a 
+                        href={item.href} 
+                        style={{ 
+                          color: "inherit", 
+                          textDecoration: "none",
+                          display: "block"
+                        }}
+                      >
+                        <Text 
+                          variant="body-default-m"
+                          style={{ 
+                            fontSize: "15px", 
+                            fontWeight: 400,
+                            lineHeight: "1.5",
+                            wordBreak: "break-word"
+                          }}
+                        >
+                          {item.value}
+                        </Text>
                       </a>
                     ) : (
-                      <Text variant="body-default-m">{item.value}</Text>
+                      <Text 
+                        variant="body-default-m"
+                        style={{ 
+                          fontSize: "15px", 
+                          fontWeight: 400,
+                          lineHeight: "1.5"
+                        }}
+                      >
+                        {item.value}
+                      </Text>
                     )}
                   </Column>
                 </Flex>
               ))}
             </Column>
-            <Flex gap="m" wrap>
-              <Button href={`mailto:${person.email}`} variant="primary" prefixIcon="email">
+            
+            {/* Social Links Section */}
+            {(githubLink || linkedinLink) && (
+              <Column gap="12" style={{ paddingTop: "8px" }}>
+                <Text 
+                  variant="label-default-s" 
+                  onBackground="neutral-medium"
+                  style={{ 
+                    fontSize: "12px", 
+                    fontWeight: 500, 
+                    textTransform: "uppercase",
+                    letterSpacing: "0.5px",
+                    opacity: 0.7,
+                    marginBottom: "4px"
+                  }}
+                >
+                  Connect
+                </Text>
+                <Flex gap="12">
+                  {githubLink && (
+                    <IconButton
+                      href={githubLink}
+                      icon="github"
+                      tooltip="GitHub"
+                      size="m"
+                      variant="ghost"
+                      style={{
+                        width: "40px",
+                        height: "40px"
+                      }}
+                    />
+                  )}
+                  {linkedinLink && (
+                    <IconButton
+                      href={linkedinLink}
+                      icon="linkedin"
+                      tooltip="LinkedIn"
+                      size="m"
+                      variant="ghost"
+                      style={{
+                        width: "40px",
+                        height: "40px"
+                      }}
+                    />
+                  )}
+                </Flex>
+              </Column>
+            )}
+            
+            {/* Action Buttons */}
+            <Flex gap="12" wrap style={{ paddingTop: "8px" }}>
+              <Button 
+                href={`mailto:${person.email}`} 
+                variant="primary" 
+                prefixIcon="email"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  padding: "10px 20px",
+                  height: "auto"
+                }}
+              >
                 Email me
               </Button>
-              <Button href={about.calendar?.link ?? "https://cal.com"} variant="secondary" prefixIcon="calendar">
+              <Button 
+                href={about.calendar?.link ?? "https://cal.com"} 
+                variant="secondary" 
+                prefixIcon="calendar"
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  padding: "10px 20px",
+                  height: "auto"
+                }}
+              >
                 Schedule call
               </Button>
             </Flex>
