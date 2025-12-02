@@ -46,14 +46,15 @@ export default function ContactPage() {
     <Column 
       as="section" 
       gap="xl" 
-      paddingY="40" 
+      paddingTop="56"
+      paddingBottom="40"
       paddingX="l" 
       maxWidth="l" 
       horizontal="center"
       fillWidth
       style={{
-        paddingLeft: "clamp(1rem, 4vw, 2rem)",
-        paddingRight: "clamp(1rem, 4vw, 2rem)",
+        paddingLeft: "clamp(1rem, 4vw, 2.5rem)",
+        paddingRight: "clamp(1rem, 4vw, 2.5rem)",
       }}
     >
       <RevealFx translateY={6}>
