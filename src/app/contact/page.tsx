@@ -43,26 +43,67 @@ export default function ContactPage() {
   };
 
   return (
-    <Column as="section" gap="xl" paddingY="40" paddingX="l" maxWidth="m" horizontal="center">
-      <RevealFx translateY="6">
-        <Column align="center" horizontal="center" gap="m" textAlign="center">
+    <Column 
+      as="section" 
+      gap="xl" 
+      paddingY="40" 
+      paddingX="l" 
+      maxWidth="l" 
+      horizontal="center"
+      fillWidth
+      style={{
+        paddingLeft: "clamp(1rem, 4vw, 2rem)",
+        paddingRight: "clamp(1rem, 4vw, 2rem)",
+      }}
+    >
+      <RevealFx translateY={6}>
+        <Column 
+          align="center" 
+          horizontal="center" 
+          gap="m" 
+          fillWidth
+          style={{ 
+            textAlign: "center",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
           <Badge background="brand-alpha-weak" onBackground="brand-strong" textVariant="label-default-s">
             Contact
           </Badge>
-          <Heading variant="display-strong-m" align="center">
+          <Heading 
+            variant="display-strong-m" 
+            align="center"
+            style={{ 
+              textAlign: "center",
+              width: "100%"
+            }}
+          >
             Minimal touchpoint. Maximum clarity.
           </Heading>
-          <Text variant="body-default-l" onBackground="neutral-medium" align="center" maxWidth="s">
-            Drop a quick note, book a short call, or send product context. I’ll reply within one business day with
-            next steps.
-          </Text>
+          <Column maxWidth="s" horizontal="center" style={{ margin: "0 auto" }}>
+            <Text 
+              variant="body-default-l" 
+              onBackground="neutral-medium" 
+              align="center"
+              style={{ 
+                textAlign: "center"
+              }}
+            >
+              Drop a quick note, book a short call, or send product context. I'll reply within one business day with
+              next steps.
+            </Text>
+          </Column>
         </Column>
       </RevealFx>
 
       <RevealFx translateY="8" delay={0.1}>
         <Flex
-          gap="l"
+          gap="24"
           wrap
+          horizontal="center"
+          mobileDirection="column"
+          fillWidth
           style={{
             alignItems: "stretch",
           }}
@@ -74,7 +115,13 @@ export default function ContactPage() {
             radius="l"
             border="neutral-alpha-weak"
             background="surface"
-            style={{ minWidth: 280 }}
+            fillWidth
+            style={{ 
+              minWidth: "280px",
+              maxWidth: "420px",
+              flexBasis: "420px",
+              padding: "clamp(24px, 4vw, 32px)"
+            }}
           >
             <Heading variant="heading-strong-l" style={{ fontSize: "20px", fontWeight: 600, letterSpacing: "-0.01em", marginBottom: "4px" }}>
               Ways to reach me
@@ -233,7 +280,13 @@ export default function ContactPage() {
             radius="l"
             border="neutral-alpha-weak"
             background="surface"
-            style={{ minWidth: 320 }}
+            fillWidth
+            style={{ 
+              minWidth: "320px",
+              maxWidth: "600px",
+              flexBasis: "600px",
+              padding: "clamp(24px, 4vw, 32px)"
+            }}
           >
             {submitted ? (
               <Column gap="m" align="center" horizontal="center">
@@ -254,6 +307,7 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit}>
                   <Column gap="m">
                     <Input
+                      id="name"
                       label="Name"
                       name="name"
                       value={formData.name}
@@ -261,6 +315,7 @@ export default function ContactPage() {
                       required
                     />
                     <Input
+                      id="email"
                       label="Email"
                       name="email"
                       type="email"
