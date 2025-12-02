@@ -86,7 +86,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am a Computer Science Engineering (Hons) student specializing in Artificial Intelligence & Machine Learning at Christ University. With a strong foundation in full-stack development and AI/ML, I am passionate about building intuitive user interfaces and leveraging machine learning to solve real-world problems.
+        I am a Computer Science Engineering (Hons) student specializing in Artificial Intelligence & Machine Learning at Christ University. With a strong foundation in full-xstack development and AI/ML, I am passionate about building intuitive user interfaces and leveraging machine learning to solve real-world problems.
 
 
       </>
