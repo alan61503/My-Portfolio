@@ -68,7 +68,19 @@ export default function ContactPage() {
             justifyContent: "center"
           }}
         >
-          <Badge background="brand-alpha-weak" onBackground="brand-strong" textVariant="label-default-s">
+          <Badge 
+            background="brand-alpha-weak" 
+            onBackground="brand-strong" 
+            textVariant="label-default-l"
+            paddingX="32"
+            style={{
+              paddingTop: "14px",
+              paddingBottom: "14px",
+              fontSize: "16px",
+              fontWeight: 600,
+              letterSpacing: "0.5px"
+            }}
+          >
             Contact
           </Badge>
           <Heading 

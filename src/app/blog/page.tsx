@@ -48,8 +48,9 @@ export default function Blog() {
             onBackground="brand-strong" 
             textVariant="label-default-l"
             paddingX="32"
-            paddingY="14"
             style={{
+              paddingTop: "14px",
+              paddingBottom: "14px",
               fontSize: "16px",
               fontWeight: 600,
               letterSpacing: "0.5px"

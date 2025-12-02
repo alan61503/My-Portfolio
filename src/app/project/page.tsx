@@ -88,21 +88,27 @@ export default function Project() {
       {/* Hero Section */}
       <Column fillWidth paddingY="24" gap="l">
         <RevealFx translateY="4" fillWidth>
-          <Column gap="m" align="center">
+          <Column gap="m" align="center" horizontal="center" fillWidth style={{ textAlign: "center" }}>
             <Badge
               background="brand-alpha-weak"
-              paddingX="12"
-              paddingY="4"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
+              onBackground="brand-strong"
+              textVariant="label-default-l"
+              paddingX="32"
+              style={{
+                paddingTop: "14px",
+                paddingBottom: "14px",
+                fontSize: "16px",
+                fontWeight: 600,
+                letterSpacing: "0.5px"
+              }}
             >
               Portfolio Showcase
             </Badge>
-            <Heading wrap="balance" variant="display-strong-l" align="center">
+            <Heading wrap="balance" variant="display-strong-l" align="center" style={{ width: "100%" }}>
               Featured Projects
             </Heading>
-            <Column maxWidth="s">
-              <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center">
+            <Column maxWidth="s" horizontal="center" style={{ margin: "0 auto" }}>
+              <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center" style={{ textAlign: "center" }}>
                 Innovative solutions built with modern technologies. From full-stack applications to AI-powered systems.
               </Text>
             </Column>

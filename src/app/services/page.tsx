@@ -81,10 +81,16 @@ export default function Services() {
           <Column gap="m" align="center">
             <Badge
               background="brand-alpha-weak"
-              paddingX="12"
-              paddingY="4"
-              onBackground="neutral-strong"
-              textVariant="label-default-s"
+              onBackground="brand-strong"
+              textVariant="label-default-l"
+              paddingX="32"
+              style={{
+                paddingTop: "14px",
+                paddingBottom: "14px",
+                fontSize: "16px",
+                fontWeight: 600,
+                letterSpacing: "0.5px"
+              }}
             >
               What I Offer
             </Badge>

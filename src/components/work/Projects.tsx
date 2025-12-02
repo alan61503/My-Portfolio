@@ -18,10 +18,27 @@ export function Projects({ range }: ProjectsProps) {
     : sortedProjects;
 
   return (
-    <Column fillWidth gap="xl" marginBottom="40" paddingX="l">
+    <Column
+      fillWidth
+      gap="xl"
+      marginBottom="40"
+      paddingX="l"
+      style={{
+        // responsive horizontal padding: min 16px, up to 48px (approx), scales with viewport
+        paddingLeft: "clamp(16px, 4vw, 48px)",
+        paddingRight: "clamp(16px, 4vw, 48px)",
+      }}
+    >
       {/* Header */}
       <RevealFx translateY="4" fillWidth>
-        <Column gap="m" paddingY="24">
+        <Column
+          gap="m"
+          paddingY="24"
+          align="center"
+          horizontal="center"
+          textAlign="center"
+          style={{ maxWidth: 980, marginLeft: "auto", marginRight: "auto" }}
+        >
           <Badge
             background="brand-alpha-weak"
             paddingX="12"
@@ -32,11 +49,17 @@ export function Projects({ range }: ProjectsProps) {
           >
             Portfolio
           </Badge>
-          <Heading wrap="balance" variant="display-strong-l">
-            Selected Work
+
+          <Heading wrap="balance" variant="display-strong-l" align="center">
+            Portfolio Showcase
           </Heading>
+
+          <Heading variant="heading-strong-m" align="center" style={{ marginTop: 4 }}>
+            Featured Projects
+          </Heading>
+
           <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" maxWidth="m">
-            A showcase of projects where design meets engineering. Each one tells a story of innovation, problem-solving, and craftsmanship.
+            Innovative solutions built with modern technologies. From full-stack applications to AI-powered systems.
           </Text>
         </Column>
       </RevealFx>
@@ -51,22 +74,24 @@ export function Projects({ range }: ProjectsProps) {
         </Flex>
       </RevealFx>
 
-      {/* Project Cards */}
-      {displayedProjects.map((post, index) => (
-        <RevealFx key={post.slug} translateY="8" delay={0.15 + index * 0.05} fillWidth>
-          <ProjectCard
-            priority={index < 2}
-            href={`work/${post.slug}`}
-            images={post.metadata.images}
-            title={post.metadata.title}
-            description={post.metadata.summary}
-            content={post.content}
-            avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
-            link={post.metadata.link || ""}
-            year={post.metadata.publishedAt ? new Date(post.metadata.publishedAt).getFullYear().toString() : undefined}
-          />
-        </RevealFx>
-      ))}
+      {/* Project Cards - centered container */}
+      <Column style={{ maxWidth: 1100, marginLeft: "auto", marginRight: "auto", width: "100%" }} gap="xl">
+        {displayedProjects.map((post, index) => (
+          <RevealFx key={post.slug} translateY="8" delay={0.15 + index * 0.05} fillWidth>
+            <ProjectCard
+              priority={index < 2}
+              href={`work/${post.slug}`}
+              images={post.metadata.images}
+              title={post.metadata.title}
+              description={post.metadata.summary}
+              content={post.content}
+              avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+              link={post.metadata.link || ""}
+              year={post.metadata.publishedAt ? new Date(post.metadata.publishedAt).getFullYear().toString() : undefined}
+            />
+          </RevealFx>
+        ))}
+      </Column>
     </Column>
   );
 }
