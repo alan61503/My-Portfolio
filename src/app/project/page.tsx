@@ -9,10 +9,33 @@ export default function Project() {
 
   const projects = [
     {
+      title: "Efficient Pathfinding in a Maze Using BFS",
+      category: "ai",
+      description:
+        "IEEE CSNT 2025 publication showcasing a Breadth-First Search pipeline for dependable robotic navigation in complex mazes.",
+      image: "/images/path.png",
+      tags: ["BFS", "Robotics", "AI/ML", "Research"],
+      stats: { accuracy: "Shortest path", latency: "<120ms", scope: "40x40 grids" },
+      link: "/work/efficient-pathfinding-in-a-maze-using-breadth-first-search",
+      featured: true,
+    },
+    {
+      title: "Digital Twin for Electric Two-Wheelers",
+      category: "ai",
+      description:
+        "ICVTTS 25 research blending ESP32 telemetry, ThingSpeak IoT dashboards, and AR overlays for live battery insights on campus fleets.",
+      image: "/images/digital.png",
+      tags: ["Digital Twin", "IoT", "Augmented Reality", "Battery"],
+      stats: { soc: "<2% error", sync: "<1s", riders: "60 km field" },
+      link: "/work/digital-twinning-electric-two-wheeler",
+      featured: true,
+    },
+    {
       title: "Apex Motion Website",
       category: "web",
-      description: "Complete web platform for a motion design company with custom CMS and portfolio showcase",
-      image: "/images/projects/project-01/cover-01.jpg",
+      description:
+        "Designed and shipped apexmotion.in end-to-end — a lightning-fast marketing site with a headless CMS, case-study builder, analytics dashboards, and automated deployments for the Apex Motion studio.",
+      image: "/images/apex.png",
       tags: ["Next.js", "React", "TypeScript", "UI/UX"],
       stats: { performance: "100%", users: "10K+", time: "3 months" },
       link: "https://apexmotion.in",
@@ -42,7 +65,7 @@ export default function Project() {
       title: "AI-Powered Traffic Optimizer",
       category: "ai",
       description: "Machine learning solution for real-time traffic optimization and prediction",
-      image: "/images/projects/project-01/cover-04.jpg",
+      image: "/images/traffic.png",
       tags: ["Python", "TensorFlow", "ML", "Real-time"],
       stats: { accuracy: "95%", reduced: "40%", coverage: "5 cities" },
       link: null,
@@ -204,7 +227,9 @@ export default function Project() {
 
         {/* Projects Grid */}
         <Flex gap="m" wrap fillWidth>
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project, index) => {
+            const isApex = project.title === "Apex Motion Website";
+            return (
             <RevealFx key={index} translateY="8" delay={0.3 + index * 0.05} fillWidth>
               <Column
                 gap="m"
@@ -217,16 +242,43 @@ export default function Project() {
                 onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
               >
                 {/* Project Image */}
-                <div
-                  style={{
-                    width: "100%",
-                    height: "200px",
-                    borderRadius: "8px",
-                    backgroundImage: `url(${project.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
+                {isApex ? (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "220px",
+                      borderRadius: "12px",
+                      background: "var(--neutral-alpha-weak)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                      padding: "12px",
+                    }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "contain",
+                        borderRadius: "8px",
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      borderRadius: "8px",
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                )}
 
                 {/* Project Info */}
                 <Column gap="8">
@@ -269,7 +321,7 @@ export default function Project() {
                 )}
               </Column>
             </RevealFx>
-          ))}
+          )})}
         </Flex>
       </Column>
 

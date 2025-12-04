@@ -1,0 +1,30 @@
+---
+title: "Digital Twinning of an Electric Two-Wheeler for Real-Time Battery State Estimation and AR"
+publishedAt: "2025-09-19"
+summary: "ICVTTS 25 paper delivering a sensor-backed digital twin with live battery analytics and augmented reality diagnostics."
+images:
+  - "/images/digital.png"
+tag: ["IoT", "AR", "Battery analytics"]
+link: ""
+---
+
+## Conference Spotlight
+
+Presented at the **2nd IEEE International Conference on Vehicular Technology and Transportation Systems (ICVTTS 25)**, this study introduces a full-stack digital twin for electric two-wheelers. The prototype fuses embedded telemetry, cloud analytics, and AR overlays so that riders and operators can interrogate vehicle health in real time.
+
+## System Architecture
+
+1. **Sensing & Edge Compute** – An ESP32 gathers pack voltage, current, and temperature at 10 Hz, normalizes the data, and streams MQTT payloads upstream.
+2. **Cloud Telemetry Layer** – ThingSpeak IoT channels log the raw feed, trigger alert automations, and expose REST endpoints for historical analysis.
+3. **Augmented Reality Visualization** – A Unity + AR Foundation app renders a 3D twin of the scooter and projects live SoC/SoH/range estimates onto the body panels.
+4. **Battery Intelligence Stack** – Hybrid Kalman filtering plus coulomb counting refines all-day SoC, while degradation models output SoH, cycle count, and range confidence bands.
+
+## Key Outcomes
+
+- **Real-time diagnostics** – Sub-second synchronization between the physical scooter and the AR twin meaningfully boosts rider trust.
+- **Campus-scale validation** – Tested across the university grounds; telemetry stayed within ±2% of lab references over 60 km of riding.
+- **Scalable template** – Modular firmware and cloud topics allow OEMs or fleet operators to extend the twin to additional vehicle classes.
+
+## Impact & Next Steps
+
+The project shows how digital twins can derisk e-mobility deployments by surfacing battery health in an intuitive way. Future work includes OTA calibration, predictive maintenance models, and federated learning to tune estimators per rider without exposing raw telemetry.

@@ -1,0 +1,35 @@
+---
+title: "Efficient Pathfinding in a Maze to Overcome Challenges in Robotics and AI Using Breadth-First Search"
+publishedAt: "2025-03-07"
+summary: "IEEE CSNT 2025 publication detailing a BFS-driven maze navigation framework for reliable robotic pathfinding."
+images:
+  - "/images/path.png"
+---
+
+## Overview
+
+This publication, presented at the IEEE International Conference on Communication Systems and Network Technologies (CSNT 2025), explores how Breadth-First Search (BFS) can be optimized for grid-based mazes relevant to robotics and autonomous navigation. We focused on balancing accuracy, predictable run time, and resource usage so the algorithm remains dependable when integrated into embedded robotic stacks.
+
+## Conference Details
+
+- **Event**: IEEE CSNT 2025, Pathfinding and Intelligent Systems track
+- **Date**: March 7, 2025
+- **Role**: Lead author and presenter
+- **Session Goal**: Showcase a reproducible maze solver that doubles as a reference implementation for robotics courses and prototype stacks.
+
+## Technical Highlights
+
+1. **Adaptive BFS Heuristics** – Introduced a layered queue schedule that prioritizes frontier nodes based on obstacle density while preserving BFS correctness guarantees.
+2. **Dynamic Maze Handling** – Added lightweight re-planning hooks so robots can respond when new barriers appear without restarting the entire search tree.
+3. **Benchmark Suite** – Built 30+ canonical mazes (sparse, dense, multi-goal, weighted) and compared BFS against DFS, Dijkstra, and A* to highlight trade-offs in runtime vs. determinism.
+4. **Hardware Validation** – Ran the solver on a differential-drive robot with limited compute and confirmed < 120 ms planning latency for arenas up to 40×40 cells.
+
+## Impact for Robotics and AI
+
+- **Autonomous Navigation**: Provides a stable baseline pathfinder that teams can extend with heuristics or sensor fusion layers.
+- **AI Decision Making**: Demonstrates how simple graph search remains valuable when reliability trumps raw speed.
+- **Industry Use Cases**: Logistics bots, healthcare delivery rovers, and search-and-rescue crawlers benefit from predictable traversal guarantees in cramped layouts.
+
+## Future Work
+
+We outlined follow-up research on hybrid BFS + heuristic planners, real-time cost map updates, and GPU-assisted queue processing for massive environments. These directions aim to bridge the gap between theoretical guarantees and on-device autonomy for next-gen robotics platforms.
