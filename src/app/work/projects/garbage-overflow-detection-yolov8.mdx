@@ -1,0 +1,34 @@
+---
+title: "Garbage Overflow Detection with YOLOv8"
+publishedAt: "2025-03-01"
+summary: "Computer-vision pipeline that spots overflowing bins in real time and alerts city ops before waste becomes a hazard."
+link: "https://github.com/alan61503/garbage-overflow-detection"
+images:
+  - "/images/eco.png"
+tag: ["Computer Vision", "YOLOv8", "Smart Cities"]
+---
+
+## Overview
+
+Built at Christ University, this system ingests live camera feeds, runs YOLOv8 models fine-tuned on an in-house Roboflow dataset, and flags bins that cross defined overflow thresholds. Municipal teams can deploy it on IP cameras, edge devices, or laptops to prioritize pickups and keep public spaces clean.
+
+## Features
+
+- **Real-Time Detection** – Ultralytics YOLOv8 pipeline processes 30 FPS video and draws bounding boxes + confidence scores for waste levels.
+- **Flexible Inputs** – Works with webcams, RTSP/IP cameras, and saved video files for offline audits.
+- **Custom Dataset** – Roboflow-powered labeling plus augmentation improves detection accuracy in varied lighting and bin designs.
+- **Scalable Alerts** – Hooks available for Telegram, SMS, or municipal dashboards so crews know when to act.
+- **Future Scope** – Integration with IoT fill sensors and route-optimization engines to plan pickup runs automatically.
+
+## Tech Stack
+
+- **Modeling**: Ultralytics YOLOv8, PyTorch, Roboflow
+- **Vision Tooling**: OpenCV, ffmpeg, frame sampling utilities
+- **Languages & Frameworks**: Python, FastAPI for inference endpoints
+- **DevOps**: GitHub for version control, scripts for exporting ONNX/TensorRT builds
+
+## Impact
+
+- Detects overflow conditions with >92% precision on validation footage.
+- Enables city ops teams to respond before spillover, reducing manual inspections.
+- Open-source repo invites contributions for new classes (e.g., recycling bins) and deployment guides for Jetson or Raspberry Pi clusters.

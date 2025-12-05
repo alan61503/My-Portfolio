@@ -22,7 +22,7 @@ export async function generateMetadata() {
     title: about.title,
     description: about.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
+    image: "/images/Alan.png",
     path: about.path,
   });
 }
@@ -54,7 +54,7 @@ export default function About() {
         title={about.title}
         description={about.description}
         path={about.path}
-        image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
+        image="/images/Alan.png"
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,

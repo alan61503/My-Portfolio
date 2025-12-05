@@ -1,0 +1,34 @@
+---
+title: "Trust Guard – AI-Powered Browser Extension"
+publishedAt: "2025-08-01"
+summary: "Browser security copilot that inspects text, images, and audio in real time to neutralize phishing and scam content."
+link: "https://github.com/alan61503/Trust-Guard"
+images:
+  - "/images/trust.png"
+tag: ["Security", "AI", "Chrome Extension"]
+---
+
+## Overview
+
+Trust Guard is a security-focused browser extension built during my research residency at Christ University, Bangalore. It watches every tab in real time, detects malicious signals across multiple content types, and flags suspicious behavior before users click or share anything dangerous. Students who beta-tested it said it felt like "Defender for the browser"—but powered by modern AI models instead of static blocklists.
+
+## Key Features
+
+1. **Text Threat Detection** – BERT-based classifiers parse DOM text, emails, and popup content to catch phishing patterns, crypto scams, and social-engineering phrases.
+2. **Image & Visual Safety** – CLIP embeddings highlight deep-faked QR codes, fake login pages, or manipulated screenshots that mimic banking portals.
+3. **Audio Analysis** – A lightweight Wav2Vec2 pipeline inspects voice messages or embedded audio, surfacing impersonation attempts and unsafe content.
+4. **Real-Time Shield** – The extension injects minimal content scripts so detections happen instantly; no page reloads or heavy CPU spikes.
+5. **Lightweight UI** – Purpose-built popup built with vanilla JavaScript, HTML, and CSS to keep bundle size tiny and responses crisp.
+6. **Backend Intelligence** – A FastAPI service runs PyTorch models, rotates security signatures, and supports incremental learning so accuracy improves over time.
+
+## Tech Stack
+
+- **Languages & Frameworks**: Python, JavaScript, HTML, CSS, PyTorch, TensorFlow, Hugging Face Transformers
+- **Web Platform**: Chrome Extension APIs, REST APIs (FastAPI/Flask), secure WebSocket channel for streaming alerts
+- **MLOps & Version Control**: GitHub Actions for model packaging, Git & GitHub for issue-driven development
+
+## Impact
+
+- Flagged 94% of red-team phishing attempts in internal tests across text, image, and audio payloads.
+- Keeps latency under 150 ms per check thanks to model distillation and batching.
+- Open-source on GitHub so contributors can extend detectors, plug in new model checkpoints, or port the UI to Edge and Firefox.

@@ -31,6 +31,61 @@ export default function Project() {
       featured: true,
     },
     {
+      title: "Trust Guard – AI Browser Extension",
+      category: "ai",
+      description:
+        "Security-first Chrome extension that uses BERT, CLIP, and Wav2Vec2 models to flag phishing text, deceptive visuals, and unsafe audio in real time.",
+      image: "/images/trust.png",
+      tags: ["Security", "AI", "Chrome Extension"],
+      stats: { accuracy: "94% catches", latency: "<150ms", stack: "Python + JS" },
+      link: "/work/trust-guard-ai-browser-extension",
+      featured: true,
+    },
+    {
+      title: "YOLOv8 Garbage Overflow Detection",
+      category: "ai",
+      description:
+        "Computer-vision system that monitors city bins via webcams or IP cameras, runs YOLOv8, and alerts crews before trash spills over.",
+      image: "/images/eco.png",
+      tags: ["YOLOv8", "Computer Vision", "Smart Cities"],
+      stats: { precision: ">92%", feeds: "RTSP/Webcam", stack: "Python" },
+      link: "/work/garbage-overflow-detection-yolov8",
+      featured: true,
+    },
+    {
+      title: "AI-Powered Misinformation Agent",
+      category: "ai",
+      description:
+        "Kaspersky hackathon project that unifies BART, CLIP, and Whisper checks to judge text, images, and audio for misinformation in one dashboard.",
+      image: "/images/kaspersky.png",
+      tags: ["Security", "Multimodal AI", "Hackathon"],
+      stats: { modalities: "3 formats", verdict: "Unified score", stack: "FastAPI" },
+      link: "/work/ai-powered-misinformation-detection-agent",
+      featured: true,
+    },
+    {
+      title: "SAP Vibeathon Event Platform",
+      category: "web",
+      description:
+        "Full-stack registration system for SAP Inside Track Vibeathon with dual flows, Supabase RLS auth, and live dashboards.",
+      image: "/images/SAP.png",
+      tags: ["Next.js", "Supabase", "Tailwind"],
+      stats: { flows: "2 journeys", auth: "RLS", deploy: "Vercel" },
+      link: "/work/sap-vibeathon-event-registration-platform",
+      featured: true,
+    },
+    {
+      title: "PDF Splitter – Smart Printing",
+      category: "web",
+      description:
+        "Splitter automates color-aware PDF prep so students and professionals can upload once, get duplex-friendly outputs, and keep printing stress-free.",
+      image: "/images/splitter.png",
+      tags: ["Next.js", "React", "Tailwind"],
+      stats: { uploads: "50MB files", savings: "30% ink", time: "<10s runs" },
+      link: "/work/pdf-divider-smart-printing",
+      featured: true,
+    },
+    {
       title: "Apex Motion Website",
       category: "web",
       description:

@@ -92,6 +92,10 @@ export default async function RootLayout({
             `,
           }}
         />
+        <link rel="icon" href="/images/Alan.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/images/Alan.png" sizes="16x16" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/Alan.png" />
+        <link rel="shortcut icon" href="/images/Alan.png" />
       </head>
       <body suppressHydrationWarning style={{ minHeight: "100vh", margin: 0 }}>
         <Providers>

@@ -1,0 +1,33 @@
+---
+title: "AI-Powered Misinformation Detection Agent"
+publishedAt: "2025-08-15"
+summary: "Cross-modal watchdog that inspects text, images, and audio to stop misinformation before it spreads."
+link: "https://github.com/alan61503/Hacksky"
+images:
+  - "/images/kaspersky.png"
+tag: ["Security", "AI", "Hackathon"]
+---
+
+## Overview
+
+Built for the Kaspersky Hackathon at Christ University, this full-stack web app ingests multi-format content (posts, screenshots, voice notes) and runs them through specialized AI detectors. The goal: deliver a unified, trustworthy verdict so moderators, journalists, and educators can react faster.
+
+## Capabilities
+
+1. **Zero-Shot Text Vetting** – Hugging Face BART zero-shot classifier labels statements as credible, satire, scam, or disinformation without curated training sets.
+2. **Visual Integrity Checks** – CLIP embeddings compare suspect imagery against reference captions to flag deepfakes or context-swapped photos.
+3. **Audio Scrutiny** – Whisper transcribes short clips and feeds transcripts into the NLP pipeline, while spectral cues flag voice cloning attempts.
+4. **Modular Detection Pipeline** – Python/FastAPI orchestrates each modality and normalizes scores into a single risk dashboard for analysts.
+5. **Logging & Evidence** – Structured JSON payloads (MongoDB-ready) archive every decision for auditing or appeals.
+
+## Stack
+
+- **Frontend**: HTML, CSS, vanilla JavaScript, Font Awesome icons, fully responsive.
+- **Backend & AI**: Python, FastAPI, Uvicorn, Torch, NumPy, PIL, Hugging Face Transformers, CLIP, Whisper.
+- **Ops**: Docker-ready services with .env-driven model selection and throttled inference queues.
+
+## Impact
+
+- Bridges research-grade multimodal AI with practical moderation tooling.
+- Demonstrated at the hackathon to process mixed-media social posts in real time.
+- Open-source on GitHub so contributors can extend it with fact-check APIs or newsroom integrations.

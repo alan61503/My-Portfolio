@@ -1,0 +1,38 @@
+---
+title: "SAP Vibeathon – Event Registration Platform"
+publishedAt: "2025-10-01"
+summary: "Dual-flow event registration stack with Supabase auth, RLS guards, and dashboards for SAP Inside Track Vibeathon 2025."
+link: "https://sap-vibeathon-self.vercel.app"
+images:
+  - "/images/SAP.png"
+tag: ["Full-Stack", "Supabase", "Next.js"]
+---
+
+## Overview
+
+Built for the SAP Inside Track Vibeathon – College Student Edition 2025 at Christ University, this platform handles both professional and student registration journeys with real-time validation, secure auth, and live event metrics. The UI ships with light/dark themes, responsive layouts, and a dashboard that keeps organizers updated on attendance, waitlists, and cohort mix.
+
+## Core Features
+
+1. **Dual Registration Flows** – Tailored forms for Professionals and Students, with conditional questions, live field validation, and contextual guidance.
+2. **Secure Authentication** – Supabase Auth + RLS ensuring users can only see their submissions; admins enjoy elevated policies for approvals.
+3. **Stats Dashboard** – Dynamic charts powered by Supabase/PostgreSQL views display registrations, approvals, and RSVP funnels.
+4. **Modern UI/UX** – Next.js + React + Tailwind CSS with theme toggles, keyboard navigation, and motion primitives to keep the experience polished.
+5. **Deployment Ready** – CI/CD via Vercel, environment-based Supabase keys, and logging for every registration event.
+
+## Stack
+
+- **Frontend**: Next.js 15, React, TypeScript, Tailwind CSS
+- **Backend / Data**: Supabase (PostgreSQL + Auth + RLS), Edge Functions for webhooks
+- **Infra**: Vercel for hosting, GitHub for version control
+
+## Links
+
+- Live demo: [sap-vibeathon-self.vercel.app](https://sap-vibeathon-self.vercel.app)
+- Source: [github.com/alan61503/SAP-vibeathon](https://github.com/alan61503/SAP-vibeathon)
+
+## Impact
+
+- Eliminated manual spreadsheet signups during the hackathon, cutting ops time by ~60%.
+- Ensured data privacy through Supabase RLS, making it safe for both student and professional cohorts.
+- Modular enough to clone for future university events with minimal configuration changes.
