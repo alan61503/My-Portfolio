@@ -42,16 +42,6 @@ export default function Project() {
       featured: true,
     },
     {
-      title: "E-Mobility Solutions",
-      category: "fullstack",
-      description: "Full-stack platform for electric vehicle charging infrastructure with real-time monitoring",
-      image: "/images/projects/project-01/cover-02.jpg",
-      tags: ["React", "Node.js", "PostgreSQL", "IoT"],
-      stats: { stations: "50+", uptime: "99.9%", cost: "-30%" },
-      link: null,
-      featured: true,
-    },
-    {
       title: "Once UI Design System",
       category: "design",
       description: "Comprehensive component library with 50+ components and dark mode support",
@@ -69,26 +59,6 @@ export default function Project() {
       tags: ["Python", "TensorFlow", "ML", "Real-time"],
       stats: { accuracy: "95%", reduced: "40%", coverage: "5 cities" },
       link: null,
-      featured: false,
-    },
-    {
-      title: "Portfolio Builder Platform",
-      category: "web",
-      description: "Simple yet powerful portfolio builder for developers with drag-and-drop interface",
-      image: "/images/projects/project-01/image-01.jpg",
-      tags: ["Next.js", "React", "Tailwind"],
-      stats: { templates: "20+", users: "5K+", time: "< 10min" },
-      link: "/work/simple-portfolio-builder",
-      featured: false,
-    },
-    {
-      title: "Figma to Code Pipeline",
-      category: "automation",
-      description: "Automated design handoffs with intelligent code generation from Figma designs",
-      image: "/images/projects/project-01/image-02.jpg",
-      tags: ["Automation", "Figma API", "React"],
-      stats: { saved: "80%", accuracy: "92%", exports: "10K+" },
-      link: "/work/automate-design-handovers-with-a-figma-to-code-pipeline",
       featured: false,
     },
   ];
@@ -338,7 +308,7 @@ export default function Project() {
           </Column>
           <Flex gap="l" wrap horizontal="center">
             <Column gap="4" align="center" style={{ flex: "1 1 150px" }}>
-              <Heading variant="display-strong-m">50+</Heading>
+              <Heading variant="display-strong-m">10+</Heading>
               <Text variant="body-default-m" onBackground="neutral-medium">Projects Delivered</Text>
             </Column>
             <Column gap="4" align="center" style={{ flex: "1 1 150px" }}>
@@ -348,10 +318,6 @@ export default function Project() {
             <Column gap="4" align="center" style={{ flex: "1 1 150px" }}>
               <Heading variant="display-strong-m">95%</Heading>
               <Text variant="body-default-m" onBackground="neutral-medium">Client Satisfaction</Text>
-            </Column>
-            <Column gap="4" align="center" style={{ flex: "1 1 150px" }}>
-              <Heading variant="display-strong-m">500+</Heading>
-              <Text variant="body-default-m" onBackground="neutral-medium">GitHub Stars</Text>
             </Column>
           </Flex>
         </Column>

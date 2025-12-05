@@ -24,11 +24,9 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Flex
-      suppressHydrationWarning
-      as="html"
+    <html
       lang="en"
-      fillWidth
+      suppressHydrationWarning
       className={classNames(
         fonts.heading.variable,
         fonts.body.variable,
@@ -95,8 +93,9 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <Providers>
-        <Column as="body" background="page" fillWidth style={{minHeight: "100vh"}} margin="0" padding="0" horizontal="center">
+      <body suppressHydrationWarning style={{ minHeight: "100vh", margin: 0 }}>
+        <Providers>
+          <Column background="page" fillWidth style={{ minHeight: "100vh" }} margin="0" padding="0" horizontal="center">
           <Background
             position="fixed"
             mask={{
@@ -139,22 +138,23 @@ export default async function RootLayout({
             }}
           />
           <Header />
-            <Flex
-              zIndex={0}
-              fillWidth
-              padding="l"
-              horizontal="center"
-              flex={1}
-            >
-              <Flex horizontal="center" fillWidth minHeight="0">
-                <RouteGuard>
-                  {children}
-                </RouteGuard>
-              </Flex>
+          <Flex
+            zIndex={0}
+            fillWidth
+            padding="l"
+            horizontal="center"
+            flex={1}
+          >
+            <Flex horizontal="center" fillWidth minHeight="0">
+              <RouteGuard>
+                {children}
+              </RouteGuard>
             </Flex>
-            <Footer/>
-          </Column>
+          </Flex>
+          <Footer />
+        </Column>
         </Providers>
-      </Flex>
+      </body>
+    </html>
   );
 }
