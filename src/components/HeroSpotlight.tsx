@@ -9,7 +9,7 @@ type HeroSpotlightProps = {
 	children: React.ReactNode;
 };
 
-const colors = ["#c32d27", "#f5c63f", "#457ec4", "#356fdb"];
+const colors = ["#58898a", "#545882", "#457ec4", "#356fdb"];
 const BASE_SIZE = 30;
 const ACTIVE_SIZE = 400;
 const BLUR_ACTIVE = 20;
