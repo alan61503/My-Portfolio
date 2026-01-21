@@ -130,6 +130,7 @@ export default function Project() {
   const filteredProjects = filter === "all" 
     ? projects 
     : projects.filter(p => p.category === filter);
+  const featuredProject = filteredProjects.find((project) => project.featured);
 
   return (
     <Column maxWidth="m" gap="xl" horizontal="center" paddingX="l">
@@ -189,7 +190,7 @@ export default function Project() {
         </RevealFx>
 
         {/* Large Featured Project */}
-        {filteredProjects.filter(p => p.featured)[0] && (
+        {featuredProject && (
           <RevealFx translateY="8" delay={0.25} fillWidth>
             <Column
               fillWidth
@@ -199,7 +200,7 @@ export default function Project() {
               background="surface"
               border="neutral-alpha-weak"
               style={{
-                backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url(${filteredProjects.filter(p => p.featured)[0].image})`,
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url(${featuredProject.image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 minHeight: "400px",
@@ -210,20 +211,20 @@ export default function Project() {
             >
               <Column gap="m" fillWidth>
                 <Flex gap="8" wrap>
-                  {filteredProjects.filter(p => p.featured)[0].tags.map((tag, i) => (
+                  {featuredProject.tags.map((tag, i) => (
                     <Badge key={i} background="brand-alpha-weak" paddingX="8" paddingY="4" textVariant="label-default-s">
                       {tag}
                     </Badge>
                   ))}
                 </Flex>
                 <Heading variant="display-strong-m" style={{ color: "white" }}>
-                  {filteredProjects.filter(p => p.featured)[0].title}
+                  {featuredProject.title}
                 </Heading>
                 <Text variant="body-default-l" style={{ color: "rgba(255,255,255,0.85)" }}>
-                  {filteredProjects.filter(p => p.featured)[0].description}
+                  {featuredProject.description}
                 </Text>
                 <Flex gap="l" wrap>
-                  {Object.entries(filteredProjects.filter(p => p.featured)[0].stats).map(([key, value], i) => (
+                  {Object.entries(featuredProject.stats).map(([key, value], i) => (
                     <Column key={i} gap="4">
                       <Text variant="heading-strong-l" style={{ color: "white" }}>
                         {value}
@@ -234,11 +235,11 @@ export default function Project() {
                     </Column>
                   ))}
                 </Flex>
-                {filteredProjects.filter(p => p.featured)[0].link && (
+                {featuredProject.link && (
                   <Button
                     variant="primary"
                     size="m"
-                    href={filteredProjects.filter(p => p.featured)[0].link}
+                    href={featuredProject.link ?? undefined}
                     prefixIcon="externalLink"
                     style={{ width: "fit-content" }}
                   >
