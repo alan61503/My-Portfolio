@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import styles from "./FeaturedWork.module.scss";
@@ -31,7 +32,13 @@ export const Project = ({ project }: ProjectProps) => {
         animate={isActive ? "open" : "closed"}
         className={styles.imgContainer}
       >
-        <img src={project.src} alt={`${project.title1} ${project.title2}`} />
+        <Image
+          src={project.src}
+          alt={`${project.title1} ${project.title2}`}
+          width={130}
+          height={100}
+          className={styles.projectImage}
+        />
       </motion.div>
       <p>{project.title2}</p>
     </Link>

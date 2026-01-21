@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 import { baseURL, person } from "@/resources";
 
+/* eslint-disable @next/next/no-img-element */
+
 export const runtime = "nodejs";
 
 export async function GET(request: Request) {

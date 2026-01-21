@@ -16,6 +16,7 @@ import { baseURL, about, person, social } from "@/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
 import React from "react";
+import Image from "next/image";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -218,12 +219,15 @@ export default function About() {
                           if (isLogo) {
                             return (
                               <Flex key={index} padding="8" background="transparent">
-                                <img
+                                <Image
                                   src={image.src}
                                   alt={image.alt || "Company logo"}
+                                  width={220}
+                                  height={120}
                                   style={{
                                     maxWidth: 220,
                                     height: "auto",
+                                    width: "auto",
                                     objectFit: "contain",
                                   }}
                                 />
@@ -279,10 +283,12 @@ export default function About() {
                       </Text>
                       {/* University logo to the right of description */}
                       {institution.name === "Christ (Deemed to be University)" && (
-                        <img
+                        <Image
                           src="/images/logo.png"
                           alt="Christ University Logo"
-                          style={{ width: 200, flexShrink: 0 }}
+                          width={200}
+                          height={80}
+                          style={{ width: 200, height: "auto", flexShrink: 0 }}
                         />
                       )}
                     </Flex>

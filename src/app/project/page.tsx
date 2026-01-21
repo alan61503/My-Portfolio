@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Column, Flex, Heading, Text, Button, RevealFx, Badge, Icon } from "@once-ui-system/core";
 import { person } from "@/resources";
 
@@ -280,14 +281,15 @@ export default function Project() {
                       justifyContent: "center",
                       overflow: "hidden",
                       padding: "12px",
+                      position: "relative",
                     }}
                   >
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 320px"
                       style={{
-                        width: "100%",
-                        height: "100%",
                         objectFit: "contain",
                         borderRadius: "8px",
                       }}
