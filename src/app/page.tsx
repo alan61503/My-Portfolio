@@ -155,17 +155,6 @@ export default function Home() {
           </Column>
         </Column>
 
-        <Column gap="m">
-          <Heading variant="display-strong-s">How I Think</Heading>
-          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
-            I care deeply about clarity — in code, in design, and in problem solving.
-          </Text>
-          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
-            I believe great software is not just functional, but intentional: built with structure,
-            performance, and the end user in mind.
-          </Text>
-        </Column>
-
       </Column>
       <ContactSection />
     </Column>

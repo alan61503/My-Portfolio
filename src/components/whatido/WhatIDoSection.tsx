@@ -1,31 +1,58 @@
-import styles from "./style.module.scss";
+"use client";
 
-const focusItems = ["Development", "AI / ML", "Tools & Stack"];
+import styles from "./style.module.scss";
+import { useInView, motion } from "framer-motion";
+import { useRef } from "react";
+import { slideUp, opacity } from "./animation";
 
 export const WhatIDoSection = () => {
+  const phrase = "Hi, I'm Alan — Full Stack Developer & AIML Specialist";
+  const description = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(description, { amount: 0.6, once: false });
+
   return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <div className={styles.copy}>
-          <p className={styles.kicker}>What I Do</p>
-          <p className={styles.lead}>
-            I’m a full-stack developer specializing in modern web technologies and applied AI/ML.
-          </p>
-          <p className={styles.body}>
-            I focus on building products that are fast, scalable, and intuitive, blending engineering
-            discipline with clean design and intelligent systems.
-          </p>
-          <p className={styles.meta}>Currently pursuing B.Tech in CSE (AIML) at Christ (Deemed to be University).</p>
-        </div>
-        <div className={styles.nav}>
-          {focusItems.map((item) => (
-            <div key={item} className={styles.el}>
-              <span>{item}</span>
-              <div className={styles.indicator} />
-            </div>
-          ))}
+    <section ref={description} className={styles.description}>
+      <div className={styles.body}>
+        <aside className={styles.sideHeading}>
+          <span>Who I am</span>
+        </aside>
+        <div className={styles.content}>
+          <div className={styles.textBlock}>
+            <p>
+              {phrase.split(" ").map((word, index) => (
+                <span key={`${word}-${index}`} className={styles.mask}>
+                  <motion.span
+                    variants={slideUp}
+                    custom={index}
+                    animate={isInView ? "open" : "closed"}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+              ))}
+            </p>
+            <motion.p variants={opacity} animate={isInView ? "open" : "closed"}>
+              I'm Alan, a software engineer at Christ (Deemed to be University), where I craft
+              intuitive powerful digital products that merge intelligence with design. Let&apos;s create
+              something impactful.
+            </motion.p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
+type Text3dProps = {
+  primary: string;
+  secondary: string;
+};
+
+function Text3d({ primary, secondary }: Text3dProps) {
+  return (
+    <div className={styles.textContainer}>
+      <p className={styles.primary}>{primary}</p>
+      <p className={styles.secondary}>{secondary}</p>
+    </div>
+  );
+}
