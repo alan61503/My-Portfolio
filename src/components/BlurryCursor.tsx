@@ -63,18 +63,18 @@ export const BlurryCursor = () => {
       ref={circleRef}
       aria-hidden="true"
       style={{
-        backgroundColor: "#BCE4F2",
+        backgroundColor: "#ffffff",
         width: CURSOR_SIZE,
         height: CURSOR_SIZE,
         position: "fixed",
         top: 0,
         left: 0,
         borderRadius: "999px",
-        filter: "blur(12px)",
-        opacity: 0.65,
+        filter: "none",
+        opacity: 1,
         pointerEvents: "none",
         zIndex: 2,
-        mixBlendMode: "screen",
+        mixBlendMode: "difference",
       }}
     />
   );
