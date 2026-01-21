@@ -9,3 +9,4 @@ export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
 export { BlurryCursor } from "@/components/BlurryCursor";
+export { HeroSpotlight } from "@/components/HeroSpotlight";

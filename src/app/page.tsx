@@ -12,6 +12,7 @@ import {
   Row,
   Schema,
 } from "@once-ui-system/core";
+import { HeroSpotlight } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 const stats = [
@@ -61,7 +62,7 @@ const projects = [
 
 export default function Home() {
   return (
-    <Column maxWidth="l" gap="xl" paddingX="l" paddingY="xl">
+    <Column fillWidth gap="xl">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -76,126 +77,132 @@ export default function Home() {
         }}
       />
 
-      <Column gap="m">
-        <Heading variant="display-strong-l" wrap="balance">
-          {home.headline}
-        </Heading>
-        <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">
-          {home.subline}
-        </Text>
-        <Flex gap="m" wrap>
-          <Button href={about.path} size="m" variant="secondary" arrowIcon>
-            About Me
-          </Button>
-          <Button href="/work" size="m" variant="tertiary" arrowIcon>
-            View Work
-          </Button>
-        </Flex>
-      </Column>
-
-      <Row gap="m" wrap>
-        {stats.map((stat) => (
-          <Column
-            key={stat.label}
-            flex={1}
-            minWidth={200}
-            padding="l"
-            radius="l"
-            border="neutral-alpha-weak"
-            background="surface"
-            gap="xs"
-          >
-            <Text variant="label-default-s" onBackground="neutral-medium">
-              {stat.label}
+      <HeroSpotlight>
+        <Column maxWidth="l" paddingX="l" paddingTop="xl" gap="xl">
+          <Column gap="m">
+            <Heading variant="display-strong-l" wrap="balance">
+              {home.headline}
+            </Heading>
+            <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">
+              {home.subline}
             </Text>
-            <Heading variant="display-strong-m">{stat.value}</Heading>
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              {stat.detail}
-            </Text>
+            <Flex gap="m" wrap>
+              <Button href={about.path} size="m" variant="secondary" arrowIcon>
+                About Me
+              </Button>
+              <Button href="/work" size="m" variant="tertiary" arrowIcon>
+                View Work
+              </Button>
+            </Flex>
           </Column>
-        ))}
-      </Row>
 
-      <Column gap="m">
-        <Heading variant="display-strong-s">Focus Areas</Heading>
-        <Column gap="m">
-          {skillFocus.map((skill) => (
-            <Column
-              key={skill.title}
-              padding="l"
-              radius="l"
-              border="neutral-alpha-weak"
-              background="surface"
-              gap="s"
-            >
-              <Heading variant="heading-strong-m">{skill.title}</Heading>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {skill.copy}
-              </Text>
-              <Row gap="s" wrap>
-                {skill.stack.map((item) => (
-                  <Badge key={item} background="neutral-alpha-weak" textVariant="label-default-s">
-                    {item}
-                  </Badge>
-                ))}
-              </Row>
-            </Column>
-          ))}
-        </Column>
-      </Column>
-
-      <Column gap="m">
-        <Heading variant="display-strong-s">Selected Work</Heading>
-        <Column gap="m">
-          {projects.map((project) => (
-            <Link key={project.title} href={project.href} style={{ textDecoration: "none" }}>
+          <Row gap="m" wrap>
+            {stats.map((stat) => (
               <Column
+                key={stat.label}
+                flex={1}
+                minWidth={200}
+                padding="l"
+                radius="l"
+                border="neutral-alpha-weak"
+                background="surface"
+                gap="xs"
+              >
+                <Text variant="label-default-s" onBackground="neutral-medium">
+                  {stat.label}
+                </Text>
+                <Heading variant="display-strong-m">{stat.value}</Heading>
+                <Text variant="body-default-s" onBackground="neutral-weak">
+                  {stat.detail}
+                </Text>
+              </Column>
+            ))}
+          </Row>
+        </Column>
+      </HeroSpotlight>
+
+      <Column maxWidth="l" paddingX="l" paddingBottom="xl" gap="xl">
+        <Column gap="m">
+          <Heading variant="display-strong-s">Focus Areas</Heading>
+          <Column gap="m">
+            {skillFocus.map((skill) => (
+              <Column
+                key={skill.title}
                 padding="l"
                 radius="l"
                 border="neutral-alpha-weak"
                 background="surface"
                 gap="s"
               >
-                <Heading variant="heading-strong-m">{project.title}</Heading>
-                <Text variant="body-default-m" onBackground="neutral-medium">
-                  {project.summary}
+                <Heading variant="heading-strong-m">{skill.title}</Heading>
+                <Text variant="body-default-m" onBackground="neutral-weak">
+                  {skill.copy}
                 </Text>
-                <Row gap="s">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} background="brand-alpha-weak" onBackground="brand-strong" textVariant="label-default-s">
-                      {tag}
+                <Row gap="s" wrap>
+                  {skill.stack.map((item) => (
+                    <Badge key={item} background="neutral-alpha-weak" textVariant="label-default-s">
+                      {item}
                     </Badge>
                   ))}
                 </Row>
               </Column>
-            </Link>
-          ))}
+            ))}
+          </Column>
         </Column>
-      </Column>
 
-      <Column
-        padding="xl"
-        radius="l"
-        border="neutral-alpha-weak"
-        background="brand-alpha-weak"
-        gap="m"
-        align="center"
-      >
-        <Heading variant="display-strong-m" align="center">
-          Have a product brief or a restless idea?
-        </Heading>
-        <Text variant="body-default-l" align="center" onBackground="brand-medium">
-          I work with UK-based teams and global founders that value calm delivery, concise comms, and
-          measured craftsmanship.
-        </Text>
-        <Flex gap="m" wrap horizontal="center">
-          <Button href={`mailto:${person.email}`} size="m" prefixIcon="mail">
-            Email Me
-          </Button>
-          <Button href={about.calendar?.link ?? about.path} size="m" variant="tertiary" arrowIcon>
-            Book a Call
-          </Button>
-        </Flex>
+        <Column gap="m">
+          <Heading variant="display-strong-s">Selected Work</Heading>
+          <Column gap="m">
+            {projects.map((project) => (
+              <Link key={project.title} href={project.href} style={{ textDecoration: "none" }}>
+                <Column
+                  padding="l"
+                  radius="l"
+                  border="neutral-alpha-weak"
+                  background="surface"
+                  gap="s"
+                >
+                  <Heading variant="heading-strong-m">{project.title}</Heading>
+                  <Text variant="body-default-m" onBackground="neutral-medium">
+                    {project.summary}
+                  </Text>
+                  <Row gap="s">
+                    {project.tags.map((tag) => (
+                      <Badge key={tag} background="brand-alpha-weak" onBackground="brand-strong" textVariant="label-default-s">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </Row>
+                </Column>
+              </Link>
+            ))}
+          </Column>
+        </Column>
+
+        <Column
+          padding="xl"
+          radius="l"
+          border="neutral-alpha-weak"
+          background="brand-alpha-weak"
+          gap="m"
+          align="center"
+        >
+          <Heading variant="display-strong-m" align="center">
+            Have a product brief or a restless idea?
+          </Heading>
+          <Text variant="body-default-l" align="center" onBackground="brand-medium">
+            I work with UK-based teams and global founders that value calm delivery, concise comms, and
+            measured craftsmanship.
+          </Text>
+          <Flex gap="m" wrap horizontal="center">
+            <Button href={`mailto:${person.email}`} size="m" prefixIcon="mail">
+              Email Me
+            </Button>
+            <Button href={about.calendar?.link ?? about.path} size="m" variant="tertiary" arrowIcon>
+              Book a Call
+            </Button>
+          </Flex>
+        </Column>
       </Column>
     </Column>
   );

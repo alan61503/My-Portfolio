@@ -1,0 +1,27 @@
+.wrapper {
+	position: relative;
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+	overflow: visible;
+}
+
+.content {
+	position: relative;
+	z-index: 2;
+	margin: 0 auto;
+}
+
+.circles {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.circle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 999px;
+	mix-blend-mode: difference;
+}
