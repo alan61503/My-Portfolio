@@ -11,7 +11,7 @@ import {
   Row,
   Schema,
 } from "@once-ui-system/core";
-import { HeroSpotlight } from "@/components";
+import { ContactSection, HeroSpotlight, WhatIDoSection } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 
@@ -54,19 +54,7 @@ export default function Home() {
       </HeroSpotlight>
 
       <Column maxWidth="l" paddingX="l" paddingY="xl" gap="xl">
-        <Column gap="m">
-          <Heading variant="display-strong-s">What I Do</Heading>
-          <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">
-            I’m a full-stack developer specializing in modern web technologies and applied AI/ML.
-          </Text>
-          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
-            I focus on building products that are fast, scalable, and intuitive, blending engineering
-            discipline with clean design and intelligent systems.
-          </Text>
-          <Text variant="body-default-m" onBackground="neutral-medium" wrap="balance">
-            Currently pursuing B.Tech in CSE (AIML) at Christ (Deemed to be University).
-          </Text>
-        </Column>
+        <WhatIDoSection />
 
         <Column gap="m">
           <Heading variant="display-strong-s">Core Expertise</Heading>
@@ -178,26 +166,8 @@ export default function Home() {
           </Text>
         </Column>
 
-        <Column
-          padding="xl"
-          radius="l"
-          border="neutral-alpha-weak"
-          background="brand-alpha-weak"
-          gap="m"
-          align="center"
-        >
-          <Heading variant="display-strong-m" align="center">
-            Let’s Build Something Meaningful
-          </Heading>
-          <Text variant="body-default-l" align="center" onBackground="brand-medium">
-            If you’re working on something interesting — a product, a startup, or an idea worth
-            building — I’d love to collaborate.
-          </Text>
-          <Button href={about.path} size="m" variant="secondary" arrowIcon>
-            Get in Touch
-          </Button>
-        </Column>
       </Column>
+      <ContactSection />
     </Column>
   );
 }

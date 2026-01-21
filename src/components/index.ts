@@ -11,3 +11,5 @@ export { CustomMDX } from "@/components/mdx";
 export { BlurryCursor } from "@/components/BlurryCursor";
 export { HeroSpotlight } from "@/components/HeroSpotlight";
 export { Preloader } from "@/components/Preloader/Preloader";
+export { ContactSection } from "@/components/contact/ContactSection";
+export { WhatIDoSection } from "@/components/whatido/WhatIDoSection";
