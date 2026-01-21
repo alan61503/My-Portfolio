@@ -63,7 +63,7 @@ export const BlurryCursor = () => {
       ref={circleRef}
       aria-hidden="true"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.6)",
+        backgroundColor: "#ffffff",
         width: CURSOR_SIZE,
         height: CURSOR_SIZE,
         position: "fixed",

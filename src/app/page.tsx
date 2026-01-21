@@ -79,7 +79,7 @@ export default function Home() {
 
       <HeroSpotlight>
         <Column maxWidth="l" paddingX="l" paddingTop="xl" gap="xl">
-          <Column gap="m">
+          <Column gap="m" paddingLeft="xl" paddingRight="m">
             <Heading variant="display-strong-l" wrap="balance">
               {home.headline}
             </Heading>
