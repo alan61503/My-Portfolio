@@ -7,6 +7,8 @@ import {
   Text,
   Button,
   Column,
+  Badge,
+  Row,
   Schema,
 } from "@once-ui-system/core";
 import { HeroSpotlight } from "@/components";
@@ -50,6 +52,152 @@ export default function Home() {
           </Column>
         </Column>
       </HeroSpotlight>
+
+      <Column maxWidth="l" paddingX="l" paddingY="xl" gap="xl">
+        <Column gap="m">
+          <Heading variant="display-strong-s">What I Do</Heading>
+          <Text variant="heading-default-l" onBackground="neutral-weak" wrap="balance">
+            I’m a full-stack developer specializing in modern web technologies and applied AI/ML.
+          </Text>
+          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+            I focus on building products that are fast, scalable, and intuitive, blending engineering
+            discipline with clean design and intelligent systems.
+          </Text>
+          <Text variant="body-default-m" onBackground="neutral-medium" wrap="balance">
+            Currently pursuing B.Tech in CSE (AIML) at Christ (Deemed to be University).
+          </Text>
+        </Column>
+
+        <Column gap="m">
+          <Heading variant="display-strong-s">Core Expertise</Heading>
+          <Column gap="m">
+            <Column gap="s" padding="l" radius="l" border="neutral-alpha-weak" background="surface">
+              <Heading variant="heading-strong-m">Development</Heading>
+              <Row gap="s" wrap>
+                {[
+                  "Full-stack Web Development",
+                  "REST APIs & Backend Systems",
+                  "Scalable Frontend Architecture",
+                ].map((item) => (
+                  <Badge key={item} background="neutral-alpha-weak" textVariant="label-default-s">
+                    {item}
+                  </Badge>
+                ))}
+              </Row>
+            </Column>
+
+            <Column gap="s" padding="l" radius="l" border="neutral-alpha-weak" background="surface">
+              <Heading variant="heading-strong-m">AI / ML</Heading>
+              <Row gap="s" wrap>
+                {[
+                  "Applied Machine Learning",
+                  "Model Integration & Inference",
+                  "Data-driven Feature Design",
+                ].map((item) => (
+                  <Badge key={item} background="neutral-alpha-weak" textVariant="label-default-s">
+                    {item}
+                  </Badge>
+                ))}
+              </Row>
+            </Column>
+
+            <Column gap="s" padding="l" radius="l" border="neutral-alpha-weak" background="surface">
+              <Heading variant="heading-strong-m">Tools & Stack</Heading>
+              <Row gap="s" wrap>
+                {[
+                  "Next.js, React, TypeScript",
+                  "Tailwind CSS",
+                  "Supabase, PostgreSQL",
+                  "Python, NumPy, ML libraries",
+                ].map((item) => (
+                  <Badge key={item} background="neutral-alpha-weak" textVariant="label-default-s">
+                    {item}
+                  </Badge>
+                ))}
+              </Row>
+            </Column>
+          </Column>
+        </Column>
+
+        <Column gap="m">
+          <Heading variant="display-strong-s">Selected Work</Heading>
+          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+            A few projects that reflect my focus on real-world problem solving and clean engineering.
+          </Text>
+          <Column gap="m">
+            {[
+              {
+                title: "Apex Motion",
+                summary:
+                  "Built and scaled the apexmotion.in platform end-to-end, unifying product storytelling, performance, and deployment automation.",
+                href: "/work/apex-motion",
+              },
+              {
+                title: "PDF Splitter",
+                summary:
+                  "Colour-aware print prep that quietly saves paper for teams on tight turnarounds.",
+                href: "/work/pdf-divider-smart-printing",
+              },
+              {
+                title: "Digital Twin Research",
+                summary:
+                  "Research initiative focused on digital twinning for an electric two‑wheeler, aligning data pipelines, simulation, and real‑world telemetry.",
+                href: "/work/digital-twinning-electric-two-wheeler",
+              },
+            ].map((project) => (
+              <Column
+                key={project.title}
+                padding="l"
+                radius="l"
+                border="neutral-alpha-weak"
+                background="surface"
+                gap="s"
+              >
+                <Heading variant="heading-strong-m">{project.title}</Heading>
+                <Text variant="body-default-m" onBackground="neutral-medium">
+                  {project.summary}
+                </Text>
+                <Flex>
+                  <Button href={project.href} size="s" variant="tertiary" arrowIcon>
+                    View Case Study
+                  </Button>
+                </Flex>
+              </Column>
+            ))}
+          </Column>
+        </Column>
+
+        <Column gap="m">
+          <Heading variant="display-strong-s">How I Think</Heading>
+          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+            I care deeply about clarity — in code, in design, and in problem solving.
+          </Text>
+          <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance">
+            I believe great software is not just functional, but intentional: built with structure,
+            performance, and the end user in mind.
+          </Text>
+        </Column>
+
+        <Column
+          padding="xl"
+          radius="l"
+          border="neutral-alpha-weak"
+          background="brand-alpha-weak"
+          gap="m"
+          align="center"
+        >
+          <Heading variant="display-strong-m" align="center">
+            Let’s Build Something Meaningful
+          </Heading>
+          <Text variant="body-default-l" align="center" onBackground="brand-medium">
+            If you’re working on something interesting — a product, a startup, or an idea worth
+            building — I’d love to collaborate.
+          </Text>
+          <Button href={about.path} size="m" variant="secondary" arrowIcon>
+            Get in Touch
+          </Button>
+        </Column>
+      </Column>
     </Column>
   );
 }
