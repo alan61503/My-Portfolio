@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useScroll, motion, useTransform, useInView } from "framer-motion";
 import Magnetic from "../common/Magnetic";
 import { opacity, slideUp } from "./anim";
+import Link from "next/link";
 
 export const ContactSection = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -53,9 +54,9 @@ export const ContactSection = () => {
             </motion.div>
           </div>
           <motion.div style={{ x }} className={styles.buttonContainer}>
-            <div className={styles.button} style={{ backgroundColor: "#334BD3" }}>
+            <Link href="/contact" className={styles.button} style={{ backgroundColor: "#334BD3" }}>
               <p>Get in touch</p>
-            </div>
+            </Link>
           </motion.div>
           <motion.svg
             style={{ rotate, scale: 2 }}
