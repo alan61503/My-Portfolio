@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Heading, Flex, Text, Button, Column, Schema } from "@once-ui-system/core";
-import { ContactSection, FeaturedWork, HeroSpotlight, WhatIDoSection } from "@/components";
+import { ContactSection, FeaturedWork, HeroSpotlight, SkillsMarquee, WhatIDoSection } from "@/components";
 import { home, about, person, baseURL } from "@/resources";
 
 export default function Home() {
@@ -47,6 +47,7 @@ export default function Home() {
         <WhatIDoSection />
       </Column>
 
+      <SkillsMarquee />
       <FeaturedWork />
       <ContactSection />
     </Column>

@@ -7,7 +7,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: clamp(80px, 10vw, 140px) 0;
+  padding: 0;
 
   .button {
     border-radius: 3em;
@@ -27,7 +27,7 @@
   }
 
   .body {
-    padding-top: 200px;
+    padding-top: 80px;
     width: 100%;
     max-width: 1800px;
     padding-left: clamp(24px, 8vw, 200px);

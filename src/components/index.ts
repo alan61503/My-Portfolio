@@ -14,3 +14,4 @@ export { Preloader } from "@/components/Preloader/Preloader";
 export { ContactSection } from "@/components/contact/ContactSection";
 export { WhatIDoSection } from "@/components/whatido/WhatIDoSection";
 export { FeaturedWork } from "@/components/featured/FeaturedWork";
+export { SkillsMarquee } from "@/components/skills/SkillsMarquee";
