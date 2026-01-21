@@ -360,7 +360,7 @@ export default function Resume() {
           align="center"
         >
           <Heading variant="heading-strong-l" align="center">
-            Let's work together
+            Let&apos;s work together
           </Heading>
           <Text variant="body-default-l" onBackground="neutral-medium" align="center">
             Interested in collaborating? Get in touch to discuss your next project.

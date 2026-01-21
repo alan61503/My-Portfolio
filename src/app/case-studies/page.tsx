@@ -81,7 +81,7 @@ export default function CaseStudies() {
             </Heading>
             <Column maxWidth="s">
               <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center">
-                Deep dives into the projects I've built and the impact they've created.
+                Deep dives into the projects I&apos;ve built and the impact they&apos;ve created.
               </Text>
             </Column>
           </Column>
@@ -201,7 +201,7 @@ export default function CaseStudies() {
             Want similar results?
           </Heading>
           <Text variant="body-default-l" onBackground="neutral-medium" align="center">
-            Let's discuss your project and create something amazing together.
+            Let&apos;s discuss your project and create something amazing together.
           </Text>
         </Column>
       </RevealFx>

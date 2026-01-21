@@ -221,7 +221,7 @@ export default function Services() {
             Ready to start your project?
           </Heading>
           <Text variant="body-default-l" onBackground="neutral-medium" align="center">
-            Let's discuss how I can help you achieve your goals.
+            Let&apos;s discuss how I can help you achieve your goals.
           </Text>
           <Flex gap="8" wrap horizontal="center">
             <Button variant="secondary" size="m" href="/work">

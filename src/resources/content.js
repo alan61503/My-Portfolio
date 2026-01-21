@@ -15,7 +15,7 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
       Just in case yall wanna be kept updated with my latest projects and thoughts.
@@ -51,7 +51,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Hi, I'm Alan — Full Stack Developer & AIML Specialist</>,
+  headline: <>Hi, I&apos;m Alan — Full Stack Developer & AIML Specialist</>,
   featured: {
     display: false,
     title: <>Recent project: <strong className="ml-4">PDF Splitter</strong></>,
@@ -59,8 +59,8 @@ const home = {
   },
   subline: (
     <>
-      I'm Alan, a software engineer at <b>Christ (Deemed to be University)</b>, where I craft intuitive
-      <br />powerful digital products that merge intelligence with design. Let's create something impactful.
+      I&apos;m Alan, a software engineer at <b>Christ (Deemed to be University)</b>, where I craft intuitive
+      <br />powerful digital products that merge intelligence with design. Let&apos;s create something impactful.
     </>
   ),
 };

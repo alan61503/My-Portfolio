@@ -104,7 +104,7 @@ export default function ContactPage() {
                 textAlign: "center"
               }}
             >
-              Drop a quick note, book a short call, or send product context. I'll reply within one business day with
+              Drop a quick note, book a short call, or send product context. I&apos;ll reply within one business day with
               next steps.
             </Text>
           </Column>
@@ -309,7 +309,7 @@ export default function ContactPage() {
                   Message sent
                 </Heading>
                 <Text variant="body-default-m" onBackground="neutral-medium" align="center">
-                  Thanks for reaching out. I’ll reply shortly with the next steps.
+                  Thanks for reaching out. I&apos;ll reply shortly with the next steps.
                 </Text>
                 <Button variant="secondary" onClick={() => setSubmitted(false)}>
                   Send another

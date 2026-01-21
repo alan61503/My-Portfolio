@@ -97,7 +97,7 @@ export default function Blog() {
                 opacity: 0.8
               }}
             >
-              I'm working on some exciting tutorials, tips & tricks, and coding insights. 
+              I&apos;m working on some exciting tutorials, tips & tricks, and coding insights. 
               Stay tuned for practical guides and helpful content!
             </Text>
           </Column>

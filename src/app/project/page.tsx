@@ -387,7 +387,7 @@ export default function Project() {
             Have a project in mind?
           </Heading>
           <Text variant="body-default-l" onBackground="neutral-medium" align="center">
-            Let's collaborate and build something extraordinary together.
+              Let&apos;s collaborate and build something extraordinary together.
           </Text>
           <Flex gap="8" wrap horizontal="center">
             <Button variant="secondary" size="m" href="/work">
