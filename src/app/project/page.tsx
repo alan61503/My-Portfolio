@@ -134,11 +134,11 @@ export default function Project() {
   const featuredProject = filteredProjects.find((project) => project.featured);
 
   return (
-    <Column maxWidth="m" gap="xl" horizontal="center" paddingX="l">
+    <Column className="projects-page" maxWidth="m" gap="xl" horizontal="center" paddingX="l">
       {/* Hero Section */}
-      <Column fillWidth paddingY="24" gap="l">
+      <Column className="projects-hero" fillWidth paddingY="24" gap="l">
         <RevealFx translateY="4" fillWidth>
-          <Column gap="m" align="center" horizontal="center" fillWidth style={{ textAlign: "center" }}>
+          <Column className="projects-hero-content" gap="m" align="center" horizontal="center" fillWidth style={{ textAlign: "center" }}>
             <Badge
               background="brand-alpha-weak"
               onBackground="brand-strong"
@@ -168,7 +168,7 @@ export default function Project() {
 
         {/* Category Filter */}
         <RevealFx translateY="8" delay={0.1} fillWidth horizontal="center">
-          <Flex gap="8" wrap horizontal="center">
+          <Flex className="projects-filter" gap="8" wrap horizontal="center">
             {categories.map((cat) => (
               <Button
                 key={cat.id}
@@ -194,6 +194,7 @@ export default function Project() {
         {featuredProject && (
           <RevealFx translateY="8" delay={0.25} fillWidth>
             <Column
+              className="projects-featured-card"
               fillWidth
               gap="l"
               padding="xl"
@@ -224,7 +225,7 @@ export default function Project() {
                 <Text variant="body-default-l" style={{ color: "rgba(255,255,255,0.85)" }}>
                   {featuredProject.description}
                 </Text>
-                <Flex gap="l" wrap>
+                <Flex className="projects-featured-stats" gap="l" wrap>
                   {Object.entries(featuredProject.stats).map(([key, value], i) => (
                     <Column key={i} gap="4">
                       <Text variant="heading-strong-l" style={{ color: "white" }}>
@@ -253,7 +254,7 @@ export default function Project() {
         )}
 
         {/* Projects Grid */}
-        <Flex gap="m" wrap fillWidth>
+        <Flex className="projects-grid" gap="m" wrap fillWidth>
           {filteredProjects.map((project, index) => {
             const isApex = project.title === "Apex Motion Website";
             return (

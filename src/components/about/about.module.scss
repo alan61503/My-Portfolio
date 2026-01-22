@@ -14,9 +14,18 @@
     top: var(--static-space-64);
 }
 
+.experienceImages {
+    padding-left: 40px;
+    align-items: center;
+}
+
 @media (max-width: breakpoints.$s) {
     .avatar {
         top: auto;
+    }
+
+    .experienceImages {
+        padding-left: 0;
     }
 
     .textAlign {

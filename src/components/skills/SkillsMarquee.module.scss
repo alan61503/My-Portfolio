@@ -25,6 +25,17 @@
   padding-right: 50px;
 }
 
+@media (max-width: 600px) {
+  .main {
+    padding: 12px 0 24px;
+  }
+
+  .slider p {
+    font-size: clamp(11px, 4vw, 18px);
+    padding-right: 28px;
+  }
+}
+
 .slider p:nth-of-type(2) {
   position: absolute;
   left: 100%;

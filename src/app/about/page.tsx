@@ -213,7 +213,7 @@ export default function About() {
                       ))}
                     </Column>
                     {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
+                      <Flex className={styles.experienceImages} fillWidth paddingTop="m" gap="12" wrap>
                         {experience.images.map((image, index) => {
                           const isLogo = "kind" in image && image.kind === "logo";
                           if (isLogo) {

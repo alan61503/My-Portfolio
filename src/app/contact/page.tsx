@@ -44,6 +44,7 @@ export default function ContactPage() {
 
   return (
     <Column 
+      className="contact-page"
       as="section" 
       gap="xl" 
       paddingTop="56"
@@ -113,6 +114,7 @@ export default function ContactPage() {
 
       <RevealFx translateY="8" delay={0.1}>
         <Flex
+          className="contact-layout"
           gap="24"
           wrap
           horizontal="center"
@@ -123,6 +125,7 @@ export default function ContactPage() {
           }}
         >
           <Column
+            className="contact-card"
             flex={1}
             gap="24"
             padding="32"
@@ -257,7 +260,7 @@ export default function ContactPage() {
             )}
             
             {/* Action Buttons */}
-            <Flex gap="12" wrap style={{ paddingTop: "8px" }}>
+            <Flex className="contact-actions" gap="12" wrap style={{ paddingTop: "8px" }}>
               <Button 
                 href={`mailto:${person.email}`} 
                 variant="primary" 
@@ -288,6 +291,7 @@ export default function ContactPage() {
           </Column>
 
           <Column
+            className="contact-form-card"
             flex={2}
             gap="l"
             padding="xl"
