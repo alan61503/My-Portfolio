@@ -58,8 +58,10 @@ export function Projects({ range }: ProjectsProps) {
             Featured Projects
           </Heading>
 
-          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" maxWidth="m">
-            Innovative solutions built with modern technologies. From full-stack applications to AI-powered systems.
+          <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+            <span style={{ display: "inline-block", maxWidth: "40rem" }}>
+              Innovative solutions built with modern technologies. From full-stack applications to AI-powered systems.
+            </span>
           </Text>
         </Column>
       </RevealFx>

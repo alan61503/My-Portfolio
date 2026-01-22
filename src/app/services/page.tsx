@@ -172,8 +172,10 @@ export default function Services() {
             <Heading variant="heading-strong-l" align="center">
               How We Work Together
             </Heading>
-            <Text variant="body-default-l" onBackground="neutral-medium" align="center" maxWidth="s">
-              A streamlined process to ensure your project is delivered on time and exceeds expectations.
+            <Text variant="body-default-l" onBackground="neutral-medium" align="center">
+              <span style={{ display: "inline-block", maxWidth: "32rem" }}>
+                A streamlined process to ensure your project is delivered on time and exceeds expectations.
+              </span>
             </Text>
           </Column>
 
