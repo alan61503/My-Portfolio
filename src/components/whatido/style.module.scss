@@ -101,14 +101,14 @@
 }
 
 .primary {
-  color: currentColor;
+  color: var(--brand-on-background-strong);
 }
 
 .secondary {
   position: absolute;
   top: 0;
   left: 0;
-  color: black;
+  color: var(--accent-on-background-strong);
   opacity: 0;
   transform: rotateX(-90deg) translateY(3.5vw);
   transform-origin: bottom center;
