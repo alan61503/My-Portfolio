@@ -36,8 +36,7 @@ export function Projects({ range }: ProjectsProps) {
           paddingY="24"
           align="center"
           horizontal="center"
-          textAlign="center"
-          style={{ maxWidth: 980, marginLeft: "auto", marginRight: "auto" }}
+          style={{ maxWidth: 980, marginLeft: "auto", marginRight: "auto", textAlign: "center" }}
         >
           <Badge
             background="brand-alpha-weak"
