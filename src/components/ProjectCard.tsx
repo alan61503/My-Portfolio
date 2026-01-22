@@ -33,6 +33,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   avatars,
   link,
+  year,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
