@@ -216,7 +216,7 @@ export default function Resume() {
                       key={index}
                       background="neutral-alpha-weak"
                       paddingX="12"
-                      paddingY="6"
+                      paddingY="4"
                       textVariant="body-default-s"
                     >
                       {skill}
@@ -235,7 +235,7 @@ export default function Resume() {
                       key={index}
                       background="neutral-alpha-weak"
                       paddingX="12"
-                      paddingY="6"
+                      paddingY="4"
                       textVariant="body-default-s"
                     >
                       {skill}
@@ -254,7 +254,7 @@ export default function Resume() {
                       key={index}
                       background="neutral-alpha-weak"
                       paddingX="12"
-                      paddingY="6"
+                      paddingY="4"
                       textVariant="body-default-s"
                     >
                       {skill}
@@ -273,7 +273,7 @@ export default function Resume() {
                       key={index}
                       background="neutral-alpha-weak"
                       paddingX="12"
-                      paddingY="6"
+                      paddingY="4"
                       textVariant="body-default-s"
                     >
                       {skill}
@@ -308,7 +308,7 @@ export default function Resume() {
                     key={index}
                     background="brand-alpha-weak"
                     paddingX="12"
-                    paddingY="6"
+                    paddingY="4"
                     textVariant="body-default-m"
                   >
                     {language}

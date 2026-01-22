@@ -152,7 +152,7 @@ export default function Services() {
                     key={i}
                     background="neutral-alpha-weak"
                     paddingX="12"
-                    paddingY="6"
+                     paddingY="4"
                     textVariant="body-default-s"
                   >
                     {feature}
@@ -190,7 +190,7 @@ export default function Services() {
                 <Badge
                   background="brand-alpha-weak"
                   paddingX="12"
-                  paddingY="6"
+                   paddingY="4"
                   textVariant="heading-default-s"
                   style={{ width: "fit-content" }}
                 >
