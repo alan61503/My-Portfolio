@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useState } from "react";
 import styles from "./FeaturedWork.module.scss";
 
@@ -45,8 +45,11 @@ export const Project = ({ project }: ProjectProps) => {
   );
 };
 
-const anim = {
+const anim: Variants = {
   initial: { width: 0 },
-  open: { width: "auto", transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] } },
+  open: {
+    width: "auto",
+    transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] as [number, number, number, number] },
+  },
   closed: { width: 0 },
 };
