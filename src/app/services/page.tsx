@@ -103,9 +103,10 @@ export default function Services() {
               onBackground="neutral-weak"
               variant="heading-default-xl"
               align="center"
-              maxWidth="s"
             >
-              From full-stack development to AI/ML solutions, I help bring your ideas to life with quality and precision.
+              <span style={{ display: "inline-block", maxWidth: "36rem" }}>
+                From full-stack development to AI/ML solutions, I help bring your ideas to life with quality and precision.
+              </span>
             </Text>
           </Column>
         </RevealFx>
