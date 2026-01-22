@@ -14,7 +14,7 @@ export const SkillsMarquee = () => {
           style={{ "--marquee-duration": "70s" } as React.CSSProperties}
         >
           {Array.from({ length: 4 }).map((_, repeatIndex) => (
-            <p key={`${skillsLine}-${repeatIndex}`}>{skillsLine} ·</p>
+            <p key={`${skillsLine}-${repeatIndex}`}>{skillsLine}</p>
           ))}
         </div>
       </div>
