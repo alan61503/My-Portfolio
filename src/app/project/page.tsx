@@ -54,6 +54,17 @@ export default function Project() {
       featured: true,
     },
     {
+      title: "VEIL-AI (v1): Vehicle Entry–Exit Intelligent Logging",
+      category: "ai",
+      description:
+        "Edge-AI vehicle monitoring system for real-time entry–exit logging with Indian ANPR, hybrid storage, and privacy-first edge deployment.",
+      image: "/images/veil.jpg",
+      tags: ["Edge AI", "ANPR", "YOLO", "OCR"],
+      stats: { accuracy: ">96%", storage: "SQLite + Firebase", plates: "Indian ANPR" },
+      link: "/work/veil-ai-v1",
+      featured: true,
+    },
+    {
       title: "AI-Powered Misinformation Agent",
       category: "ai",
       description:

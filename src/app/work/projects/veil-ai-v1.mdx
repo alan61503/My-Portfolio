@@ -1,0 +1,47 @@
+---
+title: "VEIL-AI (v1): Vehicle Entry–Exit Intelligent Logging"
+publishedAt: "2026-01-28"
+summary: "Edge-AI vehicle monitoring system for real-time, privacy-preserving entry–exit logging with Indian ANPR and hybrid storage."
+link: "https://github.com/alan61503/VEIL-AI"
+images:
+  - "/images/veil.jpg"
+tag: ["Edge AI", "Computer Vision", "ANPR", "YOLO", "OCR"]
+---
+
+## Overview
+
+VEIL-AI v1 is a real-time vehicle entry–exit monitoring system optimized for Indian number plates. It runs on edge devices for low-latency, privacy-preserving surveillance and supports offline-first logging with optional cloud sync.
+
+## Key Capabilities
+
+- **License Plate Detection** – Custom-trained YOLO model optimized for Indian plates.
+- **Indian ANPR** – Two-line plate handling with EasyOCR + Tesseract fallback.
+- **Entry–Exit Tracking** – Vehicle movement logging with multi-frame confirmation.
+- **Vehicle Classification** – Private vs. commercial classification.
+- **Hybrid Storage** – SQLite for local-first persistence with optional Firebase sync.
+
+## Technical Highlights
+
+- Trained on 50,000+ Indian vehicle images.
+- 96%+ plate detection accuracy with confidence-based filtering.
+- Regex-validated OCR + line-wise parsing for noisy/stylized plates.
+- Edge-first architecture focused on latency and privacy.
+
+## Challenges Solved
+
+- Two-line plate layouts
+- Decorative fonts and extra text
+- Low-confidence reads in motion/low light
+
+## Next (v2 Roadmap)
+
+- Raspberry Pi deployment
+- Edge optimization and latency tuning
+- Improved robustness for stylized plates
+
+## Tech Stack
+
+- **Detection**: Custom YOLO
+- **OCR**: EasyOCR, Tesseract
+- **Storage**: SQLite, Firebase (optional)
+- **Language**: Python
